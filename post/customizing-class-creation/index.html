@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>定制类的创建(Metaclass) - woohoodai</title>
+  
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="woohoodai" />
+  <meta name="description" content=" 译自：The Python Language Reference (3.5.1) - 3.3.3 Customizing class creation " />
+
+  <meta name="keywords" content="woohoodai, blog" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.48" />
+
+
+<link rel="canonical" href="https://woohoodai.github.io/post/customizing-class-creation/" />
+
+
+
+<link rel="icon" href="/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/sass/jane.min.aaf3394fc81ccb6f6fe3fe458d1f5b61c39f151e44df83baaf1d7b3775a8b98d.css" integrity="sha256-qvM5T8gcy29v4/5FjR9bYcOfFR5E34O6rx17N3WouY0=" media="screen">
+
+
+
+
+
+<meta property="og:title" content="定制类的创建(Metaclass)" />
+<meta property="og:description" content="
+译自：The Python Language Reference (3.5.1) - 3.3.3 Customizing class creation
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://woohoodai.github.io/post/customizing-class-creation/" /><meta property="article:published_time" content="2016-04-24T17:55:58&#43;00:00"/>
+<meta property="article:modified_time" content="2018-12-09T20:31:05&#43;08:00"/>
+<meta itemprop="name" content="定制类的创建(Metaclass)">
+<meta itemprop="description" content="
+译自：The Python Language Reference (3.5.1) - 3.3.3 Customizing class creation
+">
+
+
+<meta itemprop="datePublished" content="2016-04-24T17:55:58&#43;00:00" />
+<meta itemprop="dateModified" content="2016-04-24T17:55:58&#43;00:00" />
+<meta itemprop="wordCount" content="1354">
+
+
+
+<meta itemprop="keywords" content="译,metaclass," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="定制类的创建(Metaclass)"/>
+<meta name="twitter:description" content="
+译自：The Python Language Reference (3.5.1) - 3.3.3 Customizing class creation
+"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">WooHooDai</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://woohoodai.github.io/">主页</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://woohoodai.github.io/post/">文章</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://woohoodai.github.io/tags/">标签</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://woohoodai.github.io/categories/">分类</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://woohoodai.github.io/about/">关于</a>
+          
+        
+      </li>
+    
+  </ul>
+</nav>
+
+
+  
+    
+
+
+
+
+
+
+  <link rel="stylesheet" href="/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+  
+
+  
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/" class="logo">
+    
+      WooHooDai
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://woohoodai.github.io/">主页</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://woohoodai.github.io/post/">文章</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://woohoodai.github.io/tags/">标签</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://woohoodai.github.io/categories/">分类</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://woohoodai.github.io/about/">关于</a>
+          
+
+        
+
+      </li>
+    
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">定制类的创建(Metaclass)</h1>
+      
+      <div class="post-meta">
+        <time datetime="2016-04-24" class="post-time">
+          2016-04-24
+        </time>
+        <div class="post-category">
+            <a href="https://woohoodai.github.io/categories/python/"> Python </a>
+            
+          </div>
+        <span class="more-meta"> 约 1354 字 </span>
+          <span class="more-meta"> 预计阅读 3 分钟 </span>
+
+        
+        
+
+        
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#决定恰当的元类">决定恰当的元类</a></li>
+<li><a href="#准备类的命名空间">准备类的命名空间</a></li>
+<li><a href="#执行类的主体">执行类的主体</a></li>
+<li><a href="#创建类对象">创建类对象</a></li>
+<li><a href="#元类示例">元类示例</a>
+<ul>
+<li><a href="#推荐阅读">推荐阅读</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      <blockquote>
+<p>译自：<a href="https://docs.python.org/3/reference/datamodel.html#customizing-class-creation">The Python Language Reference (3.5.1) - 3.3.3 Customizing class creation</a>
+</p>
+</blockquote>
+
+<p>默认情况下，类是通过 <code>type()</code> 构造的。类的主体在新的命名空间中被执行，类名被局部绑定到 <code>type(name,bases,namespace)</code> 的结果中。</p>
+
+<p>类的创建过程可以定制，方法是在类的定义中传递 <code>metaclass</code> 关键字参数，或者继承一个已经拥有这一参数的类。下面这个例子中， <code>MyClass</code> 和 <code>MySubclass</code> 都是 <code>Meta</code> 的实例。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">Meta</span><span class="p">(</span><span class="nb">type</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+<span class="k">class</span> <span class="nc">MyClass</span><span class="p">(</span><span class="n">metaclass</span><span class="o">=</span><span class="n">Meta</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+<span class="k">class</span> <span class="nc">MySubclass</span><span class="p">(</span><span class="n">MyClass</span><span class="p">):</span>
+    <span class="k">pass</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>在类定义中规定的任何其他关键字参数都会经过下述的全部元类(metaclass)操作：
+- 决定恰当的元类
+- 准备类的命名空间
+- 执行类的主体
+- 创建类对象</p>
+
+<h2 id="决定恰当的元类">决定恰当的元类</h2>
+
+<p>为类定义决定一个恰当元类的过程如下：
+- 如果没有基类(bases)，且没有显式的元类，那么使用 <code>type()</code>
+- 如果有显式的元类，且其不是 <code>type()</code> 的实例，那么该元类直接作为元类
+- 如果 <code>type()</code> 的一个实例作为显式的元类，或者定义了基类，那么最底层的派生元类(most derived metaclass)被使用</p>
+
+<p>最底层的派生元类是从显式规定的元类（如果有），和所有规定了基类的类的元类（如 <code>type(cls)</code>）中选择的。最底层的派生元类是指所有候选元类的一个子类型(subtype)。如果没有候选元类符合标准，那么类定义就会失败出现 <code>TypeError</code>。</p>
+
+<h2 id="准备类的命名空间">准备类的命名空间</h2>
+
+<p>恰当的元类被标记好后，就要准备类的命名空间了。如果元类有 <code>__prepare__</code> 属性，命名空间将被如是声明 <code>namespace=metaclass.__prepare__(name,bases,**kwds)</code> （附加的关键字参数，如果有，来自类定义）</p>
+
+<p>如果元类没有 <code>__prepare__</code> 属性，类的命名空间将被实例化成一个空的 <code>dict()</code> 实例。</p>
+
+<blockquote>
+<p><strong>参考：</strong><br />
+<a href="https://www.python.org/dev/peps/pep-3115">PEP 3115</a> - <strong>Metaclasses in Python 3000</strong><br />
+  介绍 <code>__prepare__</code> 命名空间钩子（hook）</p>
+</blockquote>
+
+<h2 id="执行类的主体">执行类的主体</h2>
+
+<p>类主体的执行方式(近似地)是 <code>exec(body,globals(),namespace)</code> 。这和正常的的调用 <code>exec()</code> 的关键不同是，当类定义出现在函数(function)中时，词法作用域允许类主体（包括任何方法（指定义在函数中的方法而非定义在类中)）引用当前作用域及其外部作用域。</p>
+
+<p>然而，即使类定义出现在函数中，类中定义的方法仍然无法发现定义在类作用域的名字。类变量必须通过实例的第一个参数或类方法的第一个参数得到，且在所用静态方法中无法被得到。</p>
+
+<h2 id="创建类对象">创建类对象</h2>
+
+<p>一旦类的命名空间通过执行类主体确定下来，就可以通过调用 <code>metaclass(name,bases,namespace,**kwds)</code> 创建类对象（这里被传递的附加关键字和那些传递给 <code>__prepare__</code> 的一样）。</p>
+
+<p>类对象将被无参数形式的 <code>super()</code> 调用的。<code>__class__</code> 是由编译器创建的隐式闭包(closure)引用，如果类主体中有方法引用了 <code>__class__</code> 或 <code>super</code>。这就允许无参数形式的 <code>super()</code> 可以基于词法作用域正确标识被定义的类，而那些用作当前调用的类或实例是基于传递给方法的第一个参数。</p>
+
+<p>类对象创建完成后，它会被传给包含在类定义中的类装饰器（如果有），结果对象将作为被定义的类绑定到局部命名空间。</p>
+
+<blockquote>
+<p><strong>参考：</strong><br />
+<a href="https://www.python.org/dev/peps/pep-3135">PEP 3135</a> - <strong>New super</strong><br />
+  描述隐式 <code>__class__</code> 闭包引用</p>
+</blockquote>
+
+<h2 id="元类示例">元类示例</h2>
+
+<p>元类潜在的用途是无限的。已经被探索的想法包括日志、接口检查、自动代理、自动属性创建、代理、框架和自动资源锁/同步。</p>
+
+<p>如下元类实例，使用了一个 <a href="https://docs.python.org/3/library/collections.html#collections.OrderedDict"><code>collections.OrderedDict</code></a>记住被定义的类变量的顺序</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">OrderedClass</span><span class="p">(</span><span class="nb">type</span><span class="p">):</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">__prepare__</span> <span class="p">(</span><span class="n">metacls</span><span class="p">,</span><span class="n">name</span><span class="p">,</span><span class="n">bases</span><span class="p">,</span><span class="o">**</span><span class="n">kwds</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">collections</span><span class="o">.</span><span class="n">OrderedDict</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="fm">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span><span class="n">name</span><span class="p">,</span><span class="n">bases</span><span class="p">,</span><span class="n">namespace</span><span class="p">,</span><span class="o">**</span><span class="n">kwds</span><span class="p">):</span>
+        <span class="n">result</span><span class="o">=</span><span class="nb">type</span><span class="o">.</span><span class="fm">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span><span class="n">name</span><span class="p">,</span><span class="n">bases</span><span class="p">,</span><span class="nb">dict</span><span class="p">(</span><span class="n">namespace</span><span class="p">))</span>
+        <span class="n">result</span><span class="o">.</span><span class="n">members</span><span class="o">=</span><span class="nb">tuple</span><span class="p">(</span><span class="n">namespace</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">result</span>
+
+<span class="k">class</span> <span class="nc">A</span><span class="p">(</span><span class="n">metaclass</span><span class="o">=</span><span class="n">OrderedClass</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">one</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span><span class="k">pass</span>
+    <span class="k">def</span> <span class="nf">two</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span><span class="k">pass</span>
+    <span class="k">def</span> <span class="nf">three</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span><span class="k">pass</span>
+    <span class="k">def</span> <span class="nf">four</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span><span class="k">pass</span>
+
+<span class="n">A</span><span class="o">.</span><span class="n">members</span> <span class="c1"># (&#39;__module__&#39;, &#39;one&#39;, &#39;two&#39;, &#39;three&#39;, &#39;four&#39;)</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>执行定义的类A的过程始于调用元类的 <code>__prepare__()</code> 方法，它会返回一个空的 <code>collections.OrderedDict</code> 。返回的对象映像记录了A类主体中类语句定义的A的方法和属性。一旦那些定义被执行，有序词典就完全确定下来了，元类的 <code>__new__()</code> 方法就会被调用。那个方法构建出一个新类型，并将有序词典的键存储在 <code>members</code> 属性中。</p>
+
+<h3 id="推荐阅读">推荐阅读</h3>
+
+<ul>
+<li><a href="http://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/0014319106919344c4ef8b1e04c48778bb45796e0335839000">廖雪峰：Python3教程 - 使用元类</a></li>
+</ul>
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">woohoodai</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2018-12-09</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a></a></span>
+  </p>
+</div>
+
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="https://woohoodai.github.io/tags/%E8%AF%91/">译</a>
+          <a href="https://woohoodai.github.io/tags/metaclass/">metaclass</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/16bit-assembly-environment-on-win10/">
+            
+            <i class="iconfont">
+              <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M691.908486 949.511495l75.369571-89.491197c10.963703-12.998035 10.285251-32.864502-1.499144-44.378743L479.499795 515.267417 757.434875 204.940602c11.338233-12.190647 11.035334-32.285311-0.638543-44.850487l-80.46666-86.564541c-11.680017-12.583596-30.356378-12.893658-41.662889-0.716314L257.233596 494.235404c-11.332093 12.183484-11.041474 32.266891 0.657986 44.844348l80.46666 86.564541c1.772366 1.910513 3.706415 3.533476 5.750981 4.877077l306.620399 321.703933C662.505829 963.726242 680.945807 962.528973 691.908486 949.511495z"></path>
+</svg>
+
+            </i>
+            <span class="prev-text nav-default">在win10上搭建16位汇编环境</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        
+          <a class="next" href="/post/hello/">
+            <span class="next-text nav-default">Hello</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            
+            <i class="iconfont">
+              <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M332.091514 74.487481l-75.369571 89.491197c-10.963703 12.998035-10.285251 32.864502 1.499144 44.378743l286.278095 300.375162L266.565125 819.058374c-11.338233 12.190647-11.035334 32.285311 0.638543 44.850487l80.46666 86.564541c11.680017 12.583596 30.356378 12.893658 41.662889 0.716314l377.434212-421.426145c11.332093-12.183484 11.041474-32.266891-0.657986-44.844348l-80.46666-86.564541c-1.772366-1.910513-3.706415-3.533476-5.750981-4.877077L373.270379 71.774697C361.493148 60.273758 343.054193 61.470003 332.091514 74.487481z"></path>
+</svg>
+
+            </i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+    
+
+
+
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+  
+  
+    <a href="mailto:woohoodai@gmail.com" rel="me noopener" class="iconfont"
+      title="email" >
+      <svg class="icon" viewBox="0 0 1451 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M664.781909 681.472759 0 97.881301C0 3.997201 71.046997 0 71.046997 0L474.477909 0 961.649408 0 1361.641813 0C1361.641813 0 1432.688811 3.997201 1432.688811 97.881301L771.345323 681.472759C771.345323 681.472759 764.482731 685.154773 753.594283 688.65053L753.594283 688.664858C741.602731 693.493018 729.424896 695.068979 718.077952 694.839748 706.731093 695.068979 694.553173 693.493018 682.561621 688.664858L682.561621 688.65053C671.644501 685.140446 664.781909 681.472759 664.781909 681.472759L664.781909 681.472759ZM718.063616 811.603883C693.779541 811.016482 658.879232 802.205449 619.10784 767.734955 542.989056 701.759633 0 212.052267 0 212.052267L0 942.809523C0 942.809523 0 1024 83.726336 1024L682.532949 1024 753.579947 1024 1348.948139 1024C1432.688811 1024 1432.688811 942.809523 1432.688811 942.809523L1432.688811 212.052267C1432.688811 212.052267 893.138176 701.759633 817.019477 767.734955 777.248 802.205449 742.347691 811.03081 718.063616 811.603883L718.063616 811.603883Z"></path>
+</svg>
+
+    </a>
+
+
+<a href="https://woohoodai.github.io/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
+    class="iconfont" title="rss" target="_blank">
+    <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="30" height="30">
+  <path d="M819.157333 1024C819.157333 574.592 449.408 204.8 0 204.8V0c561.706667 0 1024 462.293333 1024 1024h-204.842667zM140.416 743.04a140.8 140.8 0 0 1 140.501333 140.586667A140.928 140.928 0 0 1 140.074667 1024C62.72 1024 0 961.109333 0 883.626667s62.933333-140.544 140.416-140.586667zM678.784 1024h-199.04c0-263.210667-216.533333-479.786667-479.744-479.786667V345.173333c372.352 0 678.784 306.517333 678.784 678.826667z"></path>
+</svg>
+
+  </a>
+  
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+      2016 -
+    2018
+    <span class="heart">
+      
+      <i class="iconfont">
+        <svg class="icon" viewBox="0 0 1025 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="14" height="14">
+  <path d="M1000.1 247.9c-15.5-37.3-37.6-70.6-65.7-98.9-54.4-54.8-125.8-85-201-85-85.7 0-166 39-221.4 107.4C456.6 103 376.3 64 290.6 64c-75.1 0-146.5 30.4-201.1 85.6-28.2 28.5-50.4 61.9-65.8 99.3-16 38.8-24 79.9-23.6 122.2 0.7 91.7 40.1 177.2 108.1 234.8 3.1 2.6 6 5.1 8.9 7.8 14.9 13.4 58 52.8 112.6 102.7 93.5 85.5 209.9 191.9 257.5 234.2 7 6.1 15.8 9.5 24.9 9.5 9.2 0 18.1-3.4 24.9-9.5 34.5-30.7 105.8-95.9 181.4-165 74.2-67.8 150.9-138 195.8-178.2 69.5-57.9 109.6-144.4 109.9-237.3 0.1-42.5-8-83.6-24-122.2z"
+   fill="#8a8a8a"></path>
+</svg>
+
+      </i>
+    </span><span class="author">
+        woohoodai
+        
+      </span></span>
+
+  
+  
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont">
+        
+        <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="35" height="35">
+  <path d="M510.866688 227.694839 95.449397 629.218702l235.761562 0-2.057869 328.796468 362.40389 0L691.55698 628.188232l241.942331-3.089361L510.866688 227.694839zM63.840492 63.962777l894.052392 0 0 131.813095L63.840492 195.775872 63.840492 63.962777 63.840492 63.962777zM63.840492 63.962777"></path>
+</svg>
+
+      </i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+
+
+
+
+<script type="text/javascript" src="/js/main.638251f4230630f0335d8c6748e53a96f94b72670920b60c09a56fdc8bece214.js" integrity="sha256-Y4JR9CMGMPAzXYxnSOU6lvlLcmcJILYMCaVv3Ivs4hQ="></script>
+
+
+
+
+
+
+  
+    <script type="text/javascript" src="/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://woohoodai.github.io/sitemap.xml

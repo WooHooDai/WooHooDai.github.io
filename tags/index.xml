@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on woohoodai</title>
+    <link>https://woohoodai.github.io/tags/</link>
+    <description>Recent content in Tags on woohoodai</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 23 Aug 2016 01:58:25 +0000</lastBuildDate>
+    
+	<atom:link href="https://woohoodai.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Debian</title>
+      <link>https://woohoodai.github.io/tags/debian/</link>
+      <pubDate>Tue, 23 Aug 2016 01:58:25 +0000</pubDate>
+      
+      <guid>https://woohoodai.github.io/tags/debian/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Gbk</title>
+      <link>https://woohoodai.github.io/tags/gbk/</link>
+      <pubDate>Mon, 03 Oct 2016 00:26:42 +0000</pubDate>
+      
+      <guid>https://woohoodai.github.io/tags/gbk/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hello</title>
+      <link>https://woohoodai.github.io/tags/hello/</link>
+      <pubDate>Mon, 18 Apr 2016 01:58:25 +0000</pubDate>
+      
+      <guid>https://woohoodai.github.io/tags/hello/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Jessie</title>
+      <link>https://woohoodai.github.io/tags/jessie/</link>
+      <pubDate>Tue, 23 Aug 2016 01:58:25 +0000</pubDate>
+      
+      <guid>https://woohoodai.github.io/tags/jessie/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Metaclass</title>
+      <link>https://woohoodai.github.io/tags/metaclass/</link>
+      <pubDate>Sun, 24 Apr 2016 17:55:58 +0000</pubDate>
+      
+      <guid>https://woohoodai.github.io/tags/metaclass/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>https://woohoodai.github.io/tags/python/</link>
+      <pubDate>Mon, 03 Oct 2016 00:26:42 +0000</pubDate>
+      
+      <guid>https://woohoodai.github.io/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>多线程</title>
+      <link>https://woohoodai.github.io/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/</link>
+      <pubDate>Mon, 03 Oct 2016 00:26:42 +0000</pubDate>
+      
+      <guid>https://woohoodai.github.io/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>字符截取</title>
+      <link>https://woohoodai.github.io/tags/%E5%AD%97%E7%AC%A6%E6%88%AA%E5%8F%96/</link>
+      <pubDate>Mon, 03 Oct 2016 00:26:42 +0000</pubDate>
+      
+      <guid>https://woohoodai.github.io/tags/%E5%AD%97%E7%AC%A6%E6%88%AA%E5%8F%96/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>树莓派</title>
+      <link>https://woohoodai.github.io/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/</link>
+      <pubDate>Mon, 18 Jul 2016 03:30:04 +0000</pubDate>
+      
+      <guid>https://woohoodai.github.io/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>汇编</title>
+      <link>https://woohoodai.github.io/tags/%E6%B1%87%E7%BC%96/</link>
+      <pubDate>Thu, 05 May 2016 01:41:29 +0000</pubDate>
+      
+      <guid>https://woohoodai.github.io/tags/%E6%B1%87%E7%BC%96/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>译</title>
+      <link>https://woohoodai.github.io/tags/%E8%AF%91/</link>
+      <pubDate>Sun, 24 Apr 2016 17:55:58 +0000</pubDate>
+      
+      <guid>https://woohoodai.github.io/tags/%E8%AF%91/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>面试</title>
+      <link>https://woohoodai.github.io/tags/%E9%9D%A2%E8%AF%95/</link>
+      <pubDate>Wed, 21 Sep 2016 00:49:29 +0000</pubDate>
+      
+      <guid>https://woohoodai.github.io/tags/%E9%9D%A2%E8%AF%95/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>题目</title>
+      <link>https://woohoodai.github.io/tags/%E9%A2%98%E7%9B%AE/</link>
+      <pubDate>Wed, 21 Sep 2016 00:49:29 +0000</pubDate>
+      
+      <guid>https://woohoodai.github.io/tags/%E9%A2%98%E7%9B%AE/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

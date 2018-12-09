@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on woohoodai</title>
+    <link>https://woohoodai.github.io/post/</link>
+    <description>Recent content in Posts on woohoodai</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 17 Feb 2017 23:22:25 +0000</lastBuildDate>
+    
+	<atom:link href="https://woohoodai.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>[转改]MySQL练习题</title>
+      <link>https://woohoodai.github.io/post/%E8%BD%AC%E8%BD%BD%E4%BF%AE%E6%94%B9mysql%E7%BB%83%E4%B9%A0%E9%A2%98/</link>
+      <pubDate>Fri, 17 Feb 2017 23:22:25 +0000</pubDate>
+      
+      <guid>https://woohoodai.github.io/post/%E8%BD%AC%E8%BD%BD%E4%BF%AE%E6%94%B9mysql%E7%BB%83%E4%B9%A0%E9%A2%98/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;题目出自: &lt;a href=&#34;http://blog.csdn.net/wolfofsiberian/article/details/39346781&#34;&gt;【MySQL】经典数据库SQL语句编写练习题——SQL语句扫盲&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;尽量去看原文. 本文内容是对原文的粘贴和些微修改, 并加入自己的理解, 方便日后遗忘时再练习. 感谢原作者对问题及解答的精心设计
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>MySQL备忘</title>
+      <link>https://woohoodai.github.io/post/mysql%E5%A4%87%E5%BF%98/</link>
+      <pubDate>Fri, 17 Feb 2017 14:35:55 +0000</pubDate>
+      
+      <guid>https://woohoodai.github.io/post/mysql%E5%A4%87%E5%BF%98/</guid>
+      <description>&lt;p&gt;用于记录MySQL的相关命令和知识点，比较零散
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>JAVA持久化: 配置文件与GlassFish服务器配置</title>
+      <link>https://woohoodai.github.io/post/java%E6%8C%81%E4%B9%85%E5%8C%96-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E4%B8%8Eglassfish%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Thu, 16 Feb 2017 18:14:27 +0000</pubDate>
+      
+      <guid>https://woohoodai.github.io/post/java%E6%8C%81%E4%B9%85%E5%8C%96-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E4%B8%8Eglassfish%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/</guid>
+      <description>&lt;p&gt;涉及persistence.xml和glassfish服务器的配置
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>输出集合的所有子集</title>
+      <link>https://woohoodai.github.io/post/%E8%BE%93%E5%87%BA%E9%9B%86%E5%90%88%E7%9A%84%E6%89%80%E6%9C%89%E5%AD%90%E9%9B%86/</link>
+      <pubDate>Mon, 31 Oct 2016 18:46:45 +0000</pubDate>
+      
+      <guid>https://woohoodai.github.io/post/%E8%BE%93%E5%87%BA%E9%9B%86%E5%90%88%E7%9A%84%E6%89%80%E6%9C%89%E5%AD%90%E9%9B%86/</guid>
+      <description>&lt;h2 id=&#34;思路&#34;&gt;思路&lt;/h2&gt;
+
+&lt;p&gt;在看LCS的时候,想不明白为什么拥有n个元素的集合,其所有子集个数是2^n.
+查了一些资料觉得这个思路最好理解:
+1. 子集从原集合中选取元素,对于每个元素它都有两种选择,选取或者不选取
+2. 那么子集的个数即为元素组合的可能性,即2^n
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>多线程与gbk字符编码截取</title>
+      <link>https://woohoodai.github.io/post/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8Egbk%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81%E6%88%AA%E5%8F%96/</link>
+      <pubDate>Mon, 03 Oct 2016 00:26:42 +0000</pubDate>
+      
+      <guid>https://woohoodai.github.io/post/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8Egbk%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81%E6%88%AA%E5%8F%96/</guid>
+      <description>&lt;h1 id=&#34;要求&#34;&gt;要求&lt;/h1&gt;
+
+&lt;p&gt;假设存在一个很大的文件,给定一个字符,统计文件中该字符出现的次数
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>一道编程题</title>
+      <link>https://woohoodai.github.io/post/%E4%B8%80%E9%81%93%E7%BC%96%E7%A8%8B%E9%A2%98/</link>
+      <pubDate>Wed, 21 Sep 2016 00:49:29 +0000</pubDate>
+      
+      <guid>https://woohoodai.github.io/post/%E4%B8%80%E9%81%93%E7%BC%96%E7%A8%8B%E9%A2%98/</guid>
+      <description>&lt;h1 id=&#34;题目&#34;&gt;题目&lt;/h1&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;一组连续的正整数1~n,问其中只由0和1组成的数字的个数&lt;br /&gt;
+输入: n, 1 &amp;lt; n &amp;lt;= 10e9&lt;br /&gt;
+示例&lt;br /&gt;
+&amp;gt; 输入: 10&lt;br /&gt;
+&amp;gt; 输出: 2
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Debian流水帐</title>
+      <link>https://woohoodai.github.io/post/debian%E6%B5%81%E6%B0%B4%E5%B8%90/</link>
+      <pubDate>Tue, 23 Aug 2016 01:58:25 +0000</pubDate>
+      
+      <guid>https://woohoodai.github.io/post/debian%E6%B5%81%E6%B0%B4%E5%B8%90/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;尝试切换到Debian Jessie系统下.做些记录,避免无用的折腾.
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>RaspberryPi3基础备忘</title>
+      <link>https://woohoodai.github.io/post/raspberrypi3%E5%9F%BA%E7%A1%80%E5%A4%87%E5%BF%98/</link>
+      <pubDate>Mon, 18 Jul 2016 03:30:04 +0000</pubDate>
+      
+      <guid>https://woohoodai.github.io/post/raspberrypi3%E5%9F%BA%E7%A1%80%E5%A4%87%E5%BF%98/</guid>
+      <description>&lt;p&gt;折腾树莓派的一些记录
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>在win10上搭建16位汇编环境</title>
+      <link>https://woohoodai.github.io/post/16bit-assembly-environment-on-win10/</link>
+      <pubDate>Thu, 05 May 2016 01:41:29 +0000</pubDate>
+      
+      <guid>https://woohoodai.github.io/post/16bit-assembly-environment-on-win10/</guid>
+      <description>&lt;p&gt;包括DOSBox，debug.exe，MASAM32的下载，Sublime Text3的相关配置
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>定制类的创建(Metaclass)</title>
+      <link>https://woohoodai.github.io/post/customizing-class-creation/</link>
+      <pubDate>Sun, 24 Apr 2016 17:55:58 +0000</pubDate>
+      
+      <guid>https://woohoodai.github.io/post/customizing-class-creation/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;译自：&lt;a href=&#34;https://docs.python.org/3/reference/datamodel.html#customizing-class-creation&#34;&gt;The Python Language Reference (3.5.1) - 3.3.3 Customizing class creation&lt;/a&gt;
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Hello</title>
+      <link>https://woohoodai.github.io/post/hello/</link>
+      <pubDate>Mon, 18 Apr 2016 01:58:25 +0000</pubDate>
+      
+      <guid>https://woohoodai.github.io/post/hello/</guid>
+      <description>&lt;p&gt;Hello
+&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

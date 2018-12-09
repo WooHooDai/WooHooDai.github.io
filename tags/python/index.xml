@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python on woohoodai</title>
+    <link>https://woohoodai.github.io/tags/python/</link>
+    <description>Recent content in Python on woohoodai</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 03 Oct 2016 00:26:42 +0000</lastBuildDate>
+    
+	<atom:link href="https://woohoodai.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>多线程与gbk字符编码截取</title>
+      <link>https://woohoodai.github.io/post/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8Egbk%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81%E6%88%AA%E5%8F%96/</link>
+      <pubDate>Mon, 03 Oct 2016 00:26:42 +0000</pubDate>
+      
+      <guid>https://woohoodai.github.io/post/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8Egbk%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81%E6%88%AA%E5%8F%96/</guid>
+      <description>&lt;h1 id=&#34;要求&#34;&gt;要求&lt;/h1&gt;
+
+&lt;p&gt;假设存在一个很大的文件,给定一个字符,统计文件中该字符出现的次数
+&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Debian流水帐 - woohoodai</title>
+  
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="woohoodai" />
+  <meta name="description" content=" 尝试切换到Debian Jessie系统下.做些记录,避免无用的折腾. " />
+
+  <meta name="keywords" content="woohoodai, blog" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.48" />
+
+
+<link rel="canonical" href="https://woohoodai.github.io/post/debian%E6%B5%81%E6%B0%B4%E5%B8%90/" />
+
+
+
+<link rel="icon" href="/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/sass/jane.min.aaf3394fc81ccb6f6fe3fe458d1f5b61c39f151e44df83baaf1d7b3775a8b98d.css" integrity="sha256-qvM5T8gcy29v4/5FjR9bYcOfFR5E34O6rx17N3WouY0=" media="screen">
+
+
+
+
+
+<meta property="og:title" content="Debian流水帐" />
+<meta property="og:description" content="
+尝试切换到Debian Jessie系统下.做些记录,避免无用的折腾.
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://woohoodai.github.io/post/debian%E6%B5%81%E6%B0%B4%E5%B8%90/" /><meta property="article:published_time" content="2016-08-23T01:58:25&#43;00:00"/>
+<meta property="article:modified_time" content="2018-12-09T23:07:06&#43;08:00"/>
+<meta itemprop="name" content="Debian流水帐">
+<meta itemprop="description" content="
+尝试切换到Debian Jessie系统下.做些记录,避免无用的折腾.
+">
+
+
+<meta itemprop="datePublished" content="2016-08-23T01:58:25&#43;00:00" />
+<meta itemprop="dateModified" content="2016-08-23T01:58:25&#43;00:00" />
+<meta itemprop="wordCount" content="3600">
+
+
+
+<meta itemprop="keywords" content="debian,jessie," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Debian流水帐"/>
+<meta name="twitter:description" content="
+尝试切换到Debian Jessie系统下.做些记录,避免无用的折腾.
+"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">WooHooDai</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://woohoodai.github.io/">主页</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://woohoodai.github.io/post/">文章</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://woohoodai.github.io/tags/">标签</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://woohoodai.github.io/categories/">分类</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://woohoodai.github.io/about/">关于</a>
+          
+        
+      </li>
+    
+  </ul>
+</nav>
+
+
+  
+    
+
+
+
+
+
+
+  <link rel="stylesheet" href="/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+  
+
+  
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/" class="logo">
+    
+      WooHooDai
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://woohoodai.github.io/">主页</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://woohoodai.github.io/post/">文章</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://woohoodai.github.io/tags/">标签</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://woohoodai.github.io/categories/">分类</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://woohoodai.github.io/about/">关于</a>
+          
+
+        
+
+      </li>
+    
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">Debian流水帐</h1>
+      
+      <div class="post-meta">
+        <time datetime="2016-08-23" class="post-time">
+          2016-08-23
+        </time>
+        
+        <span class="more-meta"> 约 3600 字 </span>
+          <span class="more-meta"> 预计阅读 8 分钟 </span>
+
+        
+        
+
+        
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#系统安装">系统安装</a></li>
+<li><a href="#硬件问题">硬件问题</a></li>
+<li><a href="#系统使用">系统使用</a></li>
+<li><a href="#软件安装">软件安装</a>
+<ul>
+<li><a href="#通用说明">通用说明</a></li>
+<li><a href="#常用软件的安装">常用软件的安装</a></li>
+</ul></li>
+<li><a href="#个性化定制">个性化定制</a></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      <blockquote>
+<p>尝试切换到Debian Jessie系统下.做些记录,避免无用的折腾.
+</p>
+
+<h1 id="系统安装">系统安装</h1>
+</blockquote>
+
+<ol>
+<li><p>缺失固件</p>
+
+<ul>
+<li>安装过程中会有提醒,最好提前下载,放入启动盘的firmware里.这样安装程序会为固件自动添加更新源</li>
+<li>或者安装好系统后直接下载deb安装</li>
+</ul></li>
+
+<li><p>空间划分</p>
+
+<ul>
+<li>/boot 独立(1GB)</li>
+<li>用LVM配置根目录,/home,/swap</li>
+<li>/swap保持和内存大小一致,/home有个10~20GB就好,剩下的给根目录</li>
+</ul></li>
+
+<li><p>引导问题</p>
+
+<ul>
+<li>系统安装完成后,使用 <code>update-grub</code> 命令,使得windows能被引导</li>
+<li>文件 <code>\etc\default\grub</code> 可配置默认启动系统,和等待时间</li>
+</ul></li>
+
+<li><p>中文字体: <code>sudo apt-get install xfonts-wqy</code> 文泉驿点阵宋体</p></li>
+</ol>
+
+<h1 id="硬件问题">硬件问题</h1>
+
+<ol>
+<li><p>花屏问题</p>
+
+<ul>
+<li>如果是花屏导致无法进入系统,先参考<a href="http://wiki.ubuntu-tw.org/index.php?title=FAQinstall#.E5.95.9F.E5.8B.95.E6.99.82.E9.BB.91.E7.95.AB.E9.9D.A2">这里</a>
+
+<ul>
+<li>在Grub界面按<code>e</code>编辑, NVIDIA显卡在<code>quiet splash</code>后加<code>nomodeset</code></li>
+<li>进入系统后
+
+<ul>
+<li><code>sudo gedit /etc/default/grub</code></li>
+<li>将<code>GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash&quot;</code>改为<code>GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash nomodeset&quot;</code></li>
+<li><code>sudo update-grub</code></li>
+</ul></li>
+<li><code>nomodeset</code>会关掉KMS从而禁用nouveau,导致屏幕亮度无法调节,所以应当接着安装nvidia私有驱动</li>
+<li>多显卡参考<a href="https://wiki.debian.org/Bumblebee">这里</a>,下面是多显卡.单显卡参考<a href="https://wiki.debian.org/zh_CN/NvidiaGraphicsDrivers">这里</a>
+
+<ul>
+<li><code>sudo apt-get install bumblebee-nvidia primus</code></li>
+<li><code>sudo adduser $USER bumblebee</code></li>
+<li>重启</li>
+<li><code>optirun --help</code>查看一些设置</li>
+</ul></li>
+<li>值得参考的资料</li>
+<li><a href="https://wiki.archlinux.org/index.php/Kernel_mode_setting_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)">KMS: Kernel mode setting</a></li>
+<li><a href="https://wiki.archlinux.org/index.php/NVIDIA_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)">NVIDIA</a></li>
+<li><a href="https://wiki.archlinux.org/index.php/Nouveau_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)">Nouveau</a></li>
+<li><a href="https://forum.suse.org.cn/viewtopic.php?f=3&amp;t=1605">nomodeset与blacklist禁用nouveau的区别(2楼)</a></li>
+</ul></li>
+</ul></li>
+
+<li><p>声音</p>
+
+<ul>
+<li>只在第一次安装时出现没有声音的问题(且并非第一次进入系统出现,怀疑和某些软件冲突)</li>
+<li>解决的办法是:
+
+<ul>
+<li><code>alsamixer</code> 里调整好各项设置</li>
+<li><code>sudo alsactl init</code></li>
+<li>以root身份登录系统,没有该问题.以其他用户身份登录,则每次都需要运行上述命令.可以考虑加入开机启动</li>
+</ul></li>
+</ul></li>
+
+<li><p>笔记本内置键盘:触摸板,键盘,键盘背光</p>
+
+<ul>
+<li>禁用触摸板
+
+<ul>
+<li><code>sudo modprobe -r psmouse</code> 永久有效</li>
+<li>启用触摸板 <code>sudo modprobe psmouse</code></li>
+</ul></li>
+
+<li><p>禁用笔记本内置键盘</p>
+
+<ul>
+<li><p>使用xinput</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">sudo apt-get install xinput  <span class="c1"># 安装xinput
+</span><span class="c1"></span>xinput  <span class="c1"># 列出所有设备信息
+</span><span class="c1"></span>xinput disable 设备id  <span class="c1"># 禁用id为&lt;设备id&gt;的设备
+</span><span class="c1"></span>xinput disable <span class="s1">&#39;设备名称&#39;</span>  <span class="c1"># 作用同上
+</span><span class="c1"></span>xinput <span class="nb">enable</span> 设备id  # 启用设备</code></pre></td></tr></table>
+</div>
+</div></li>
+
+<li><p>xinput同样也能管理触摸板.此方法只当前登录有效,需加入开机自启动,相关方法和讨论见本文&rsquo;系统使用-自启动&rsquo;部分</p></li>
+</ul></li>
+</ul>
+
+<p>-键盘背光
+    - 参考 <a href="https://wiki.archlinux.org/index.php/Keyboard_backlight">Keyboard backlight</a>
+    - 上面链接中的脚本是通用的,照着写个直接将亮度调到0的方法
+    - 需要开机启动,参考本文&rsquo;系统使用-自启动&rsquo;
+    - 全部设置-电源 里也可以手动调整亮度</p></li>
+
+<li><p>蓝牙</p>
+
+<ul>
+<li><code>dmesg | grep Bluetooth</code> 查看和蓝牙相关的内核运行信息,得到如下内容</li>
+<li>根据上面得到的信息再在 <code>dmesg</code> 获得的全部信息中查看前后文</li>
+</ul>
+
+<blockquote>
+<p>[ 7.886371] Bluetooth: Loading patch file failed
+ [ 7.886402] ath3k: probe of 1-1.1:1.0 failed with error -12
+ &hellip;
+ [ 247.375648] usb 1-1.1: firmware: failed to load ar3k/AthrBT_0x01020200.dfu (-2)
+ [ 247.375651] usb 1-1.1: Direct firmware load failed with error -2
+ [ 247.375652] usb 1-1.1: Falling back to user helper
+ [ 247.376293] Bluetooth: Loading patch file failed
+ [ 247.376298] ath3k: probe of 1-1.1:1.0 failed with error -12</p>
+</blockquote>
+
+<ul>
+<li>根据上面的信息知道应该是缺少和 <code>ath3k</code> 模块,然后我找了<a href="https://tttwrites.wordpress.com/2014/11/09/resolved-bluetooth-loading-patch-failed-in-debian-wheezy/">这篇文章</a>,提到了 <code>firmware-atheros</code> 这个固件,安装以后解决问题</li>
+<li>其实应该根据错误信息提示<a href="https://packages.debian.org/search?searchon=contents&amp;keywords=ar3k%2FAthrBT_0x01020200.dfu">这样</a>查找固件</li>
+</ul></li>
+
+<li><p>笔记本翻盖不挂机</p></li>
+
+<li><p>屏幕亮度调节</p>
+
+<ul>
+<li>用<code>xbacklight</code></li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">sudo vim /etc/systemd/logind.conf
+<span class="c1"># 将 `#HandleLidSwitch=suspend` 改为 `HandleLidSwitch=ignore`
+</span><span class="c1"></span>sudo systemctl restart systemd-logind</code></pre></td></tr></table>
+</div>
+</div></li>
+
+<li><p>挂载windows下的磁盘</p>
+
+<ul>
+<li>参考<a href="http://askubuntu.com/questions/145902/unable-to-mount-windows-ntfs-filesystem-due-to-hibernation">这里</a></li>
+</ul></li>
+</ol>
+
+<h1 id="系统使用">系统使用</h1>
+
+<ol>
+<li><p>修改apt更新源</p>
+
+<ul>
+<li>在文件 <code>/etc/apt/sources.list</code> 中修改</li>
+<li>刚安装完系统,需要注释掉 <code>deb cdrom</code> 那一行</li>
+</ul></li>
+
+<li><p>将用户设置为 sudoer</p>
+
+<ul>
+<li><p>安装sudo</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">su    <span class="c1"># 切换到root权限
+</span><span class="c1"></span>apt-get install sudo    # 安装sudo</code></pre></td></tr></table>
+</div>
+</div></li>
+
+<li><p>添加用户到 <code>/etc/sudoers</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">su    <span class="c1"># 切换到root权限
+</span><span class="c1"></span>visudo    <span class="c1"># 更好的编辑该文件方式
+</span><span class="c1"></span># 在 <span class="sb">`</span>root <span class="nv">ALL</span><span class="o">=(</span>ALL:ALL<span class="o">)</span> ALL<span class="sb">`</span> 一行下添加 <span class="sb">`</span>woohoodai <span class="nv">ALL</span><span class="o">=(</span>ALL:ALL<span class="o">)</span> NOPASSWD:ALL<span class="sb">`</span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul></li>
+
+<li><p>自启动</p>
+
+<ul>
+<li>在 <code>/etc/rc.local</code> 中添加命令行的方式不生效,还需要再研究.另外这也不是systemd的自启动方式</li>
+
+<li><p>使用systemd开机启动: 以我的需求为例</p>
+
+<ul>
+<li>参考阮一峰老师的<a href="http://www.ruanyifeng.com/blog/2016/03/systemd-tutorial-part-two.html">Systemd 入门教程：实战篇</a></li>
+
+<li><p>准备一个需要开机自启动的脚本,这里是 <code>/usr/local/bin/myautostart.sh</code> ,脚本内容如下</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="cp">#!/bin/sh
+</span><span class="cp"></span>            
+<span class="c1"># 禁用触摸板
+</span><span class="c1"># - sudo是必须的
+</span><span class="c1"># - 启用命令:sudo modprobe psmouse
+</span><span class="c1"></span>sudo modprobe -r psmouse
+            
+<span class="c1"># 关闭笔记本键盘背光
+</span><span class="c1"></span>/usr/local/bin/kb-light.py <span class="m">0</span></code></pre></td></tr></table>
+</div>
+</div></li>
+
+<li><p>建立文件 /usr/lib/systemd/system/myautorstart.service,文件内容如下</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">[Unit]
+Description=My Auto-start Script
+            
+[Service]
+Type=oneshot
+User=woohoodai
+ExecStart=/usr/local/bin/myautostart.sh
+            
+[Install]
+WantedBy=graphical.target</pre></td></tr></table>
+</div>
+</div></li>
+
+<li><p><code>sudo systemctl enable myautostart</code> ,你会在 <code>/etc/systemd/system/graphical.target.wants</code> 下得到一个软链接</p></li>
+
+<li><p>重启计算机,或者 <code>sudo systemctl start myautostart</code> 立即启动脚本</p></li>
+
+<li><p><code>sudo systemctl status myautostart</code> 可以查看脚本运行状态</p></li>
+</ul></li>
+
+<li><p>需要进入图形界面后启动的程序</p>
+
+<ul>
+<li><p>准备一个需要开机启动的脚本,放在任意位置.如 <code>/usr/local/bin/autostartingraphical.sh</code> ,内容如下</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="cp">#!/bin/sh
+</span><span class="cp"></span><span class="c1"># 用于配置桌面环境
+</span><span class="c1"></span>            
+<span class="c1"># 禁用内置键盘
+</span><span class="c1"></span>xinput disable <span class="s1">&#39;AT Translated Set 2 keyboard&#39;</span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul></li>
+
+<li><p>在 <code>附件-主菜单</code> 中添加该脚本,因为存放位置为root所有,所以command里填 <code>sudo /usr/local/bin/autostartingraphical.sh</code></p></li>
+
+<li><p>在 <code>系统工具-优化工具-开机启动程序</code> 里添加该脚本(程序)</p></li>
+</ul></li>
+
+<li><p>手贱改了scaling的时候,可以按住<code>Super</code>键移动窗体</p></li>
+
+<li><p>系统服务的启动运行层级管理，可以使用<code>sysv-rc-conf</code></p></li>
+</ol>
+
+<h1 id="软件安装">软件安装</h1>
+
+<h2 id="通用说明">通用说明</h2>
+
+<ol>
+<li><p>通过 <code>apt-get</code> 安装,但下载失败的程序,可以将手动下载好的文件放入 <code>/var/cache/apt/archives</code> ,然后带参数 <code>--fix-missing</code> 重新执行 <code>install</code></p></li>
+
+<li><p>自己下载的deb文件,可以通过 <code>sudo dpkg -i xxx.deb</code> 来安装</p></li>
+
+<li><p>直接可用的程序,可以添加到 <code>附件-主菜单</code> ,方便搜索和使用</p></li>
+</ol>
+
+<h2 id="常用软件的安装">常用软件的安装</h2>
+
+<ol>
+<li><p>Chromium浏览器</p>
+
+<ul>
+<li>Chrome也是可以安装的,找下PPA源</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">sudo apt-get install chromium chromium-l10n  # 后者是chromium的本地化包</code></pre></td></tr></table>
+</div>
+</div></li>
+
+<li><p>浏览器的Flahs支持</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">sudo aptitude install pepperflashplugin-nonfree  <span class="c1"># 仅支持从chromium
+</span><span class="c1"></span>sudo apt-get install flashplugin-nonfree  # 支持firefox 安装更新卸载查看 https://wiki.debian.org/FlashPlayer</code></pre></td></tr></table>
+</div>
+</div>
+<ul>
+<li>或者直接在<code>~/.mozilla</code>里新建文件夹<code>plugins</code>,将从官网下载下来的flashplayer.so拷进去</li>
+</ul></li>
+
+<li><p>Vim</p>
+
+<ul>
+<li>需要用python的还是自己编译吧,python2和3不能同时支持需要编译两个, 最主要的还是gvim也能分开了</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">sudo apt-get install vim vim-gnome  # 后者是gvim</code></pre></td></tr></table>
+</div>
+</div></li>
+
+<li><p>网易云音乐</p>
+
+<ul>
+<li>备注:不如直接安装chrome里的插件</li>
+<li>备注2:Chrome太糟心换Firefox了,结果这次安网易云音乐非常稳定</li>
+<li>备注3:默认的全局快捷键没有效果,主要是只能修饰键跟普通字母键 不能跟方向键空格之类的</li>
+<li>到<a href="http://music.163.com/#/download">官网</a>下载安装包,选择ubuntu14:04(64位)</li>
+
+<li><p>进行安装</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">sudo dpkg -i xxx.deb
+sudo apt-get -f install  # 补齐缺失依赖</code></pre></td></tr></table>
+</div>
+</div></li>
+
+<li><p>全局快捷键:为了防止冲突,用Ctrl+Shift+Alt作修饰键,后面跟: n(ext)下一首, p(revious)上一首, l(ike)喜欢, q(uiet)暂停, d打开歌词</p></li>
+</ul></li>
+
+<li><p>WineQQ</p>
+
+<ul>
+<li>备注:经常出现各种问题,不建议安装</li>
+<li>到<a href="http://phpcj.org/wineqq/">这里</a>下载软件</li>
+
+<li><p>安装wine</p>
+
+<ul>
+<li><p>参考<a href="https://wiki.winehq.org/Debian">这个</a>页面,如下</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">sudo dpkg --add-architecture i386  <span class="c1"># 开启32位包
+</span><span class="c1"></span>wget https://dl.winehq.org/wine-builds/Release.key  <span class="c1"># 下载key
+</span><span class="c1"></span>sudo apt-key add Release.key  <span class="c1"># 给包签名
+</span><span class="c1"># 在 /etc/apt/sources.list 添加 deb https://dl.winehq.org/wine-builds/debian/ jessie main
+</span><span class="c1"></span>sudo apt-get update
+sudo apt-get install winehq-staging</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul></li>
+
+<li><p>将第一步中下载的压缩包中的三个文件夹放到用户主目录(/home/用户名)下</p></li>
+</ul></li>
+
+<li><p>下载</p>
+
+<ul>
+<li>uGet可以安装官方最新版,配合使用的aria2还是直接apt-get吧</li>
+</ul></li>
+
+<li><p>软件收集</p>
+
+<ul>
+<li>jpdftweak pdf编辑软件</li>
+<li>umbrello UML建模</li>
+<li>xinput 输入设备设置(图形界面下 启用/禁用)</li>
+<li>xbacklight 背光调节</li>
+<li>maximus 最大化时隐藏标题栏</li>
+<li>compton 设置软件启动透明度</li>
+<li>shutter 截屏软件</li>
+<li>firefox插件
+
+<ul>
+<li>Markdown Here</li>
+<li>VimFx</li>
+<li>Gmail Notifier(restartless)</li>
+</ul></li>
+</ul></li>
+</ol>
+
+<h1 id="个性化定制">个性化定制</h1>
+
+<ol>
+<li><p>设置图标大小</p>
+
+<ul>
+<li>dconf中 <code>org-gnome-desktop-nautilus-icon-view</code></li>
+</ul></li>
+
+<li><p>桌面样式</p>
+
+<ul>
+<li>备注:使用火狐浏览器,可通过网站自动安装,节约时间</li>
+<li>在 系统工具-优化工具-扩展 中进行设置</li>
+<li>Applications menu #在任务栏显示应用程序,类似于win的开始菜单</li>
+<li>Friippery move clock #将时间移到右侧</li>
+<li>#Hide top bar #隐藏任务栏</li>
+<li>Native window placement #更好的展示活动程序</li>
+<li>Openweather #天气情况,很好用</li>
+<li>Places status indicator #在任务栏显示用户目录文件夹入口</li>
+<li>Taskbar #神器,可替代Window list</li>
+<li>#Window list #在屏幕底部显示开启的程序,类似于win的任务栏</li>
+<li>EasyScreenCast # 录屏录音</li>
+<li>Mmod panel # 将topbar放到屏幕底部</li>
+<li><code>apt-get install maximus</code> 去标题栏,设置下开机启动</li>
+</ul></li>
+
+<li><p>字体</p>
+
+<ul>
+<li><p>Infinality 字体渲染 (梳理自<a href="https://www.linuxdashen.com/debian8%e5%ae%89%e8%a3%85infinality%e6%94%b9%e5%96%84%e5%ad%97%e4%bd%93%e6%b8%b2%e6%9f%93%ef%bc%8c%e5%ae%89%e8%a3%85ubuntu%e5%ad%97%e4%bd%93">这里</a>)</p>
+
+<ul>
+<li>安装
+
+<ul>
+<li>添加源: <code>/etc/ap/sources.list</code>里添加
+&gt; deb <a href="http://ppa.launchpad.net/no1wantdthisname/ppa/ubuntu">http://ppa.launchpad.net/no1wantdthisname/ppa/ubuntu</a> trusty main
+&gt; deb-src <a href="http://ppa.launchpad.net/no1wantdthisname/ppa/ubuntu">http://ppa.launchpad.net/no1wantdthisname/ppa/ubuntu</a> trusty main</li>
+<li>添加PPA的PGP公钥: <code>sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E985B27B</code></li>
+<li>更新: <code>sudo apt-get update</code></li>
+<li>安装: <code>sudo apt-get install fontconfig-infinality</code></li>
+<li>使用</li>
+<li>直接选择字体风格: <code>sudo bash /etc/fonts/infinality/infctl.sh setstyle</code></li>
+<li>或者编辑文件<code>/etc/profile.d/infinality-settings.sh</code>中的<code>USE_STYLE</code>字段</li>
+</ul></li>
+</ul></li>
+
+<li><p>字体可以在gnome-tweak-tool里设置</p></li>
+
+<li><p>Iosevka 字体</p>
+
+<ul>
+<li>下载<a href="https://be5invis.github.io/Iosevka/">Iosevka</a>字体</li>
+<li>将字体文件放到 ~/.local/share/fonts,执行 sudo fc-cache</li>
+<li>在 系统工具-优化工具-字体 中使用该字体,将微调设为Full,抗锯齿设为Rgba</li>
+</ul></li>
+
+<li><p>Ubuntu 字体</p>
+
+<ul>
+<li>在<a href="http://packages.ubuntu.com/trusty/ttf-ubuntu-font-family">这里</a>下载</li>
+<li>安装见[软件安装-通用说明]
+<br /></li>
+</ul></li>
+</ul></li>
+
+<li><p>快捷键</p>
+
+<ul>
+<li>终端:
+
+<ul>
+<li>Ctrl+T 新标签页打开新终端</li>
+<li>Super+T 新窗口打开新终端</li>
+<li>Shift+Ctrl+W 关闭当前终端</li>
+<li>Shift+Ctrl+C 复制</li>
+<li>Shift+Ctrl+V 粘贴</li>
+</ul></li>
+<li>全局: 全部设置-键盘-快捷键
+
+<ul>
+<li>Super+A 显示活动程序概览</li>
+<li>Super+Space 显示消息栏</li>
+<li>Super+D 隐藏所有正常窗口(显示桌面)  在[导航]里</li>
+<li>Ctrl+Alt+A 选取截屏,保存在picture 在[搜索]里</li>
+<li>Ctrl+Alt+C 选取截屏,复制到剪贴板里</li>
+<li>Ctrl+Super+T 新窗口打开新终端 <code>gnome-terminal</code> # 配合nautilus,使得在任意位置都能打开一个终端</li>
+<li>#Super+Esc suspend to disk <code>echo &quot;disk&quot; | sudo tee /sys/power/state</code> # 通过快捷键或者建立主菜单经常无响应.此外再开机后会卡顿很久,弃用</li>
+<li>Ctrl+Shift+Delete 打开任务管理器(gnome-system-monitor)</li>
+<li>Super+Backspace 静音</li>
+<li>Super+= 增大音量</li>
+<li>Super+- 减小音量</li>
+<li>#Ctrl+Alt+A 截屏(gnome-terminal &ndash;geometry=0x0+9999+9999 &ndash;hide-menubar -e &ldquo;/home/woohoodai/nutstore/bin/screenshot.sh&rdquo;)</li>
+<li>Super+Home 打开工作空间</li>
+<li>Ctrl+Alt+Delete 打开任务管理器(gnome-system-monitor)</li>
+</ul></li>
+<li>预设
+
+<ul>
+<li>可在~/.config中对应文件夹的accels文件中修改快捷键
+
+<ul>
+<li>修改之前彻底关闭目标程序(可以通过gnome-system-monitor)</li>
+<li>记得将语句前的分号去掉</li>
+</ul></li>
+<li>Super+T 在当前目录打开终端</li>
+<li>Ctrl+D(进入对应的文件夹后) Nautilus侧边栏添加书签</li>
+</ul></li>
+</ul></li>
+</ol>
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">woohoodai</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2018-12-09</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a></a></span>
+  </p>
+</div>
+
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="https://woohoodai.github.io/tags/debian/">debian</a>
+          <a href="https://woohoodai.github.io/tags/jessie/">jessie</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/%E4%B8%80%E9%81%93%E7%BC%96%E7%A8%8B%E9%A2%98/">
+            
+            <i class="iconfont">
+              <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M691.908486 949.511495l75.369571-89.491197c10.963703-12.998035 10.285251-32.864502-1.499144-44.378743L479.499795 515.267417 757.434875 204.940602c11.338233-12.190647 11.035334-32.285311-0.638543-44.850487l-80.46666-86.564541c-11.680017-12.583596-30.356378-12.893658-41.662889-0.716314L257.233596 494.235404c-11.332093 12.183484-11.041474 32.266891 0.657986 44.844348l80.46666 86.564541c1.772366 1.910513 3.706415 3.533476 5.750981 4.877077l306.620399 321.703933C662.505829 963.726242 680.945807 962.528973 691.908486 949.511495z"></path>
+</svg>
+
+            </i>
+            <span class="prev-text nav-default">一道编程题</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        
+          <a class="next" href="/post/raspberrypi3%E5%9F%BA%E7%A1%80%E5%A4%87%E5%BF%98/">
+            <span class="next-text nav-default">RaspberryPi3基础备忘</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            
+            <i class="iconfont">
+              <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M332.091514 74.487481l-75.369571 89.491197c-10.963703 12.998035-10.285251 32.864502 1.499144 44.378743l286.278095 300.375162L266.565125 819.058374c-11.338233 12.190647-11.035334 32.285311 0.638543 44.850487l80.46666 86.564541c11.680017 12.583596 30.356378 12.893658 41.662889 0.716314l377.434212-421.426145c11.332093-12.183484 11.041474-32.266891-0.657986-44.844348l-80.46666-86.564541c-1.772366-1.910513-3.706415-3.533476-5.750981-4.877077L373.270379 71.774697C361.493148 60.273758 343.054193 61.470003 332.091514 74.487481z"></path>
+</svg>
+
+            </i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+    
+
+
+
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+  
+  
+    <a href="mailto:woohoodai@gmail.com" rel="me noopener" class="iconfont"
+      title="email" >
+      <svg class="icon" viewBox="0 0 1451 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M664.781909 681.472759 0 97.881301C0 3.997201 71.046997 0 71.046997 0L474.477909 0 961.649408 0 1361.641813 0C1361.641813 0 1432.688811 3.997201 1432.688811 97.881301L771.345323 681.472759C771.345323 681.472759 764.482731 685.154773 753.594283 688.65053L753.594283 688.664858C741.602731 693.493018 729.424896 695.068979 718.077952 694.839748 706.731093 695.068979 694.553173 693.493018 682.561621 688.664858L682.561621 688.65053C671.644501 685.140446 664.781909 681.472759 664.781909 681.472759L664.781909 681.472759ZM718.063616 811.603883C693.779541 811.016482 658.879232 802.205449 619.10784 767.734955 542.989056 701.759633 0 212.052267 0 212.052267L0 942.809523C0 942.809523 0 1024 83.726336 1024L682.532949 1024 753.579947 1024 1348.948139 1024C1432.688811 1024 1432.688811 942.809523 1432.688811 942.809523L1432.688811 212.052267C1432.688811 212.052267 893.138176 701.759633 817.019477 767.734955 777.248 802.205449 742.347691 811.03081 718.063616 811.603883L718.063616 811.603883Z"></path>
+</svg>
+
+    </a>
+
+
+<a href="https://woohoodai.github.io/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
+    class="iconfont" title="rss" target="_blank">
+    <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="30" height="30">
+  <path d="M819.157333 1024C819.157333 574.592 449.408 204.8 0 204.8V0c561.706667 0 1024 462.293333 1024 1024h-204.842667zM140.416 743.04a140.8 140.8 0 0 1 140.501333 140.586667A140.928 140.928 0 0 1 140.074667 1024C62.72 1024 0 961.109333 0 883.626667s62.933333-140.544 140.416-140.586667zM678.784 1024h-199.04c0-263.210667-216.533333-479.786667-479.744-479.786667V345.173333c372.352 0 678.784 306.517333 678.784 678.826667z"></path>
+</svg>
+
+  </a>
+  
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+      2016 -
+    2018
+    <span class="heart">
+      
+      <i class="iconfont">
+        <svg class="icon" viewBox="0 0 1025 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="14" height="14">
+  <path d="M1000.1 247.9c-15.5-37.3-37.6-70.6-65.7-98.9-54.4-54.8-125.8-85-201-85-85.7 0-166 39-221.4 107.4C456.6 103 376.3 64 290.6 64c-75.1 0-146.5 30.4-201.1 85.6-28.2 28.5-50.4 61.9-65.8 99.3-16 38.8-24 79.9-23.6 122.2 0.7 91.7 40.1 177.2 108.1 234.8 3.1 2.6 6 5.1 8.9 7.8 14.9 13.4 58 52.8 112.6 102.7 93.5 85.5 209.9 191.9 257.5 234.2 7 6.1 15.8 9.5 24.9 9.5 9.2 0 18.1-3.4 24.9-9.5 34.5-30.7 105.8-95.9 181.4-165 74.2-67.8 150.9-138 195.8-178.2 69.5-57.9 109.6-144.4 109.9-237.3 0.1-42.5-8-83.6-24-122.2z"
+   fill="#8a8a8a"></path>
+</svg>
+
+      </i>
+    </span><span class="author">
+        woohoodai
+        
+      </span></span>
+
+  
+  
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont">
+        
+        <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="35" height="35">
+  <path d="M510.866688 227.694839 95.449397 629.218702l235.761562 0-2.057869 328.796468 362.40389 0L691.55698 628.188232l241.942331-3.089361L510.866688 227.694839zM63.840492 63.962777l894.052392 0 0 131.813095L63.840492 195.775872 63.840492 63.962777 63.840492 63.962777zM63.840492 63.962777"></path>
+</svg>
+
+      </i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+
+
+
+
+<script type="text/javascript" src="/js/main.638251f4230630f0335d8c6748e53a96f94b72670920b60c09a56fdc8bece214.js" integrity="sha256-Y4JR9CMGMPAzXYxnSOU6lvlLcmcJILYMCaVv3Ivs4hQ="></script>
+
+
+
+
+
+
+  
+    <script type="text/javascript" src="/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

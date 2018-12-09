@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hello on woohoodai</title>
+    <link>https://woohoodai.github.io/tags/hello/</link>
+    <description>Recent content in Hello on woohoodai</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 18 Apr 2016 01:58:25 +0000</lastBuildDate>
+    
+	<atom:link href="https://woohoodai.github.io/tags/hello/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Hello</title>
+      <link>https://woohoodai.github.io/post/hello/</link>
+      <pubDate>Mon, 18 Apr 2016 01:58:25 +0000</pubDate>
+      
+      <guid>https://woohoodai.github.io/post/hello/</guid>
+      <description>&lt;p&gt;Hello
+&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

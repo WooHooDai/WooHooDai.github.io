@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>面试 on woohoodai</title>
+    <link>https://woohoodai.github.io/tags/%E9%9D%A2%E8%AF%95/</link>
+    <description>Recent content in 面试 on woohoodai</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 21 Sep 2016 00:49:29 +0000</lastBuildDate>
+    
+	<atom:link href="https://woohoodai.github.io/tags/%E9%9D%A2%E8%AF%95/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>一道编程题</title>
+      <link>https://woohoodai.github.io/post/%E4%B8%80%E9%81%93%E7%BC%96%E7%A8%8B%E9%A2%98/</link>
+      <pubDate>Wed, 21 Sep 2016 00:49:29 +0000</pubDate>
+      
+      <guid>https://woohoodai.github.io/post/%E4%B8%80%E9%81%93%E7%BC%96%E7%A8%8B%E9%A2%98/</guid>
+      <description>&lt;h1 id=&#34;题目&#34;&gt;题目&lt;/h1&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;一组连续的正整数1~n,问其中只由0和1组成的数字的个数&lt;br /&gt;
+输入: n, 1 &amp;lt; n &amp;lt;= 10e9&lt;br /&gt;
+示例&lt;br /&gt;
+&amp;gt; 输入: 10&lt;br /&gt;
+&amp;gt; 输出: 2
+&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

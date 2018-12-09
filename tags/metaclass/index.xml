@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Metaclass on woohoodai</title>
+    <link>https://woohoodai.github.io/tags/metaclass/</link>
+    <description>Recent content in Metaclass on woohoodai</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 24 Apr 2016 17:55:58 +0000</lastBuildDate>
+    
+	<atom:link href="https://woohoodai.github.io/tags/metaclass/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>定制类的创建(Metaclass)</title>
+      <link>https://woohoodai.github.io/post/customizing-class-creation/</link>
+      <pubDate>Sun, 24 Apr 2016 17:55:58 +0000</pubDate>
+      
+      <guid>https://woohoodai.github.io/post/customizing-class-creation/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;译自：&lt;a href=&#34;https://docs.python.org/3/reference/datamodel.html#customizing-class-creation&#34;&gt;The Python Language Reference (3.5.1) - 3.3.3 Customizing class creation&lt;/a&gt;
+&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
