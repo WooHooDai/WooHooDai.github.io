@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>VBA抓取网络信息总结 - woohoodai</title>
+  
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="woohoodai" />
+  <meta name="description" content="记录近期利用vba抓取网络数据积累的知识点和问题解决方法
+
+" />
+
+  <meta name="keywords" content="woohoodai, blog" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.48" />
+
+
+<link rel="canonical" href="https://woohoodai.github.io/post/vba%E6%8A%93%E5%8F%96%E7%BD%91%E7%BB%9C%E4%BF%A1%E6%81%AF%E6%80%BB%E7%BB%93/" />
+
+
+
+<link rel="icon" href="/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/sass/jane.min.aaf3394fc81ccb6f6fe3fe458d1f5b61c39f151e44df83baaf1d7b3775a8b98d.css" integrity="sha256-qvM5T8gcy29v4/5FjR9bYcOfFR5E34O6rx17N3WouY0=" media="screen">
+
+
+
+
+
+<meta property="og:title" content="VBA抓取网络信息总结" />
+<meta property="og:description" content="记录近期利用vba抓取网络数据积累的知识点和问题解决方法
+
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://woohoodai.github.io/post/vba%E6%8A%93%E5%8F%96%E7%BD%91%E7%BB%9C%E4%BF%A1%E6%81%AF%E6%80%BB%E7%BB%93/" /><meta property="article:published_time" content="2018-12-24T00:13:11&#43;08:00"/>
+<meta property="article:modified_time" content="2018-12-24T00:13:11&#43;08:00"/>
+<meta itemprop="name" content="VBA抓取网络信息总结">
+<meta itemprop="description" content="记录近期利用vba抓取网络数据积累的知识点和问题解决方法
+
+">
+
+
+<meta itemprop="datePublished" content="2018-12-24T00:13:11&#43;08:00" />
+<meta itemprop="dateModified" content="2018-12-24T00:13:11&#43;08:00" />
+<meta itemprop="wordCount" content="1821">
+
+
+
+<meta itemprop="keywords" content="," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="VBA抓取网络信息总结"/>
+<meta name="twitter:description" content="记录近期利用vba抓取网络数据积累的知识点和问题解决方法
+
+"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">WooHooDai</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://woohoodai.github.io/">主页</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://woohoodai.github.io/post/">文章</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://woohoodai.github.io/tags/">标签</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://woohoodai.github.io/categories/">分类</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://woohoodai.github.io/about/">关于</a>
+          
+        
+      </li>
+    
+  </ul>
+</nav>
+
+
+  
+    
+
+
+
+
+
+
+  <link rel="stylesheet" href="/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+  
+
+  
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/" class="logo">
+    
+      WooHooDai
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://woohoodai.github.io/">主页</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://woohoodai.github.io/post/">文章</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://woohoodai.github.io/tags/">标签</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://woohoodai.github.io/categories/">分类</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://woohoodai.github.io/about/">关于</a>
+          
+
+        
+
+      </li>
+    
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">VBA抓取网络信息总结</h1>
+      
+      <div class="post-meta">
+        <time datetime="2018-12-24" class="post-time">
+          2018-12-24
+        </time>
+        <div class="post-category">
+            
+          </div>
+        <span class="more-meta"> 约 1821 字 </span>
+          <span class="more-meta"> 预计阅读 4 分钟 </span>
+
+        
+        
+
+        
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#基本流程">基本流程</a></li>
+<li><a href="#方式与工具">方式与工具</a>
+<ul>
+<li><a href="#获取数据">获取数据</a></li>
+<li><a href="#数据提取与存储">数据提取与存储</a></li>
+</ul></li>
+<li><a href="#琐碎">琐碎</a>
+<ul>
+<li><a href="#vba相关">VBA相关</a></li>
+<li><a href="#网抓相关">网抓相关</a></li>
+</ul></li>
+<li><a href="#案例">案例</a></li>
+<li><a href="#延展资料">延展资料</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      <p>记录近期利用vba抓取网络数据积累的知识点和问题解决方法</p>
+
+<p></p>
+
+<h2 id="基本流程">基本流程</h2>
+
+<ol>
+<li><p>获取数据</p>
+
+<ul>
+<li><p>分析：数据请求（请求参数、加载方式）</p></li>
+
+<li><p>方式: 模拟请求;IE对象</p></li>
+
+<li><p>编码：Url（中文）；响应（压缩格式，中文）</p></li>
+</ul></li>
+
+<li><p>数据提取与存储</p>
+
+<ul>
+<li><p>分析：数据响应（格式、页面结构）</p></li>
+
+<li><p>提取方法：常见格式（如json与html）可以寻找已有工具处理；纯文本可使用正则表达式处理</p></li>
+
+<li><p>存储：数据结构（数据组词典）；存储到表格单元格</p></li>
+</ul></li>
+</ol>
+
+<h2 id="方式与工具">方式与工具</h2>
+
+<h3 id="获取数据">获取数据</h3>
+
+<p>1.xmlhttp对象</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-vbscript" data-lang="vbscript"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-vbscript" data-lang="vbscript">Dim oHttp As Object
+Dim myresponse As String
+   
+myresponse = &#34;&#34;
+Set oHttp = CreateObject(&#34;MSXML2.ServerXMLHTTP.6.0&#34;)
+       
+With oHttp
+	.SetProxy 2, &#34;http=xxproxy.xxxxx.com:8080&#34;, &#34;&#34; &#39; 需注意只有特定版本以上的xmlhttp对象方可设置代理，需在createobject时声明版本
+	.Open &#34;GET&#34;, &#34;http://www.xxxx.com&#34;, False &#39; False代表异步加载
+	.send
+	myresponse = .responseText
+End With</code></pre></td></tr></table>
+</div>
+</div>
+<p>2.<a href="https://github.com/VBA-tools/VBA-Web">VBA-WEB</a> : <a href="https://vba-tools.github.io/VBA-Web/docs/">doc</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-vbscript" data-lang="vbscript"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-vbscript" data-lang="vbscript">Dim oClient As New WebClient
+Dim oRequest As New WebRequest
+Dim oResponse As New WebResponse
+Dim oJsonObj As Object
+
+oClient.BaseUrl = &#34;https://www.baidu.com/&#34;
+oRequest.Resource = &#34;s?wd={keyword}&#34;
+
+oClient.SetProxy &#34;http=xxproxy.xxxxx.com:8080&#34;
+With oRequest
+	.Method = WebMethod.HttpGet
+	.Format = WebFormat.PlainText
+	.AddUrlSegment &#34;keyword&#34;, &#34;你好世界&#34;
+	&#39; -&gt; Url: https://www.baidu.com/s?wd=你好世界
+    .AddQuerystringParam &#34;ss&#34;,7
+    &#39; -&gt; Url: Url: https://www.baidu.com/s?wd=你好世界&amp;ss=7
+End With
+
+oResponse = oClient.Execute(oRequest)
+Set oJsonObj = WebHelpers.ParseJson(oResponse.Content) &#39; 假设响应内容为json格式</code></pre></td></tr></table>
+</div>
+</div>
+<p>3.IE浏览器模拟：<a href="https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/platform-apis/aa752084(v=vs.85)">InternetExplorer对象</a></p>
+
+<ul>
+<li>基本使用</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-vbscript" data-lang="vbscript"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-vbscript" data-lang="vbscript">&#39;&#39;&#39;
+&#39; 自动登录苏宁易购
+&#39; require &#39;Microsoft Internet Controls&#39;
+&#39; require &#39;Microsoft HTML Object Library&#39;
+&#39;&#39;&#39;
+Dim oIE As New InternetExplorer
+Dim uname, usecret As String
+
+uname = &#34;mysuningusername&#34;
+usecret = &#34;mysuningpassword&#34;
+
+oIE.Visible = True &#39; 设置IE可见
+oIE.navigate &#34;https://passport.suning.com/ids/login&#34; &#39; 打开指定网页
+Do While oIE.busy Or oIE.readyState &lt;&gt; 4: DoEvents: Loop &#39; 等待网页加载完毕
+oIE.document.getElementById(&#34;userName&#34;).Value = uname &#39; 找到对应文本框填写
+oIE.document.getElementById(&#34;password&#34;).Value = usecret    
+oIE.document.getElementById(&#34;submit&#34;).Click &#39; 找到登录按钮点击
+Do While oIE.busy Or oIE.readyState &lt;&gt; 4: DoEvents: Loop
+
+oIE.Refresh &#39; 刷新页面
+Do While oIE.busy Or oIE.readyState &lt;&gt; 4: DoEvents: Loop
+Debug.Print oIE.document.cookie &#39; 获得cookie
+    
+oIE.Quit &#39; 退出浏览器</code></pre></td></tr></table>
+</div>
+</div>
+<ul>
+<li><p>打开指定链接后，IE提示下载</p>
+
+<ul>
+<li><p>原因：这是由于响应的内容格式（MIME Type，具体格式查看响应头的<code>Content-Type</code>字段）IE无法识别</p></li>
+
+<li><p>解决：在注册表里注册未知格式，用ie可直接显示的格式的值注册 : <a href="https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms775147(v=vs.85)">注册位置</a>。比如下面将content-type为“application/x-javascript”，注册成和“text/html”一样</p></li>
+</ul></li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-reg" data-lang="reg"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-reg" data-lang="reg">Windows Registry Editor Version 5.00
+<span class="k">[</span><span class="nb">HKEY_CLASSES_ROOT</span><span class="k">\MIME\Database\Content Type\application/x-javascript]</span>
+<span class="na">&#34;CLSID&#34;</span><span class="o">=</span><span class="s">&#34;{25336920-03F9-11cf-8FD0-00AA00686F13}&#34;</span>
+<span class="na">&#34;Encoding&#34;</span><span class="o">=</span><span class="nv">dword</span><span class="p">:</span><span class="m">00080000</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>4.编码问题</p>
+
+<ul>
+<li>Url中包含中文 : 进行utf-8编码
+
+<ul>
+<li>如果是excel2013及以上版本,使用内建函数 <code>WorksheetFunction.EncodeURL(&quot;电池&quot;)</code></li>
+<li>如果不是则需要自定义函数 : [encode]()  ; [decode]()
+
+<ul>
+<li>代码: <a href="https://gist.github.com/WooHooDai/51b8f74b36bff6f7e31aa465bb2cbbbd">urlencode</a> ; <a href="https://gist.github.com/WooHooDai/3f0cde556edf7fb599efb3bb4697b218">urldecode</a></li>
+<li>原文: <a href="http://www.imkevinyang.com/2009/04/excel%E4%B8%AD%E4%BD%BF%E7%94%A8vba%E8%87%AA%E5%AE%9A%E4%B9%89%E5%87%BD%E6%95%B0%E5%AF%B9%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%BB%A7%E7%BB%ADurl%E7%BC%96%E7%A0%81.html">urlencode</a> ; <a href="@link https://blog.csdn.net/guyan404/article/details/5216729">urldecode</a></li>
+</ul></li>
+</ul></li>
+<li>响应内容为压缩格式
+
+<ul>
+<li>请求非压缩格式，如  <code>oRequest.AddHeader &quot;Accept-Encoding&quot;, &quot;identity&quot;</code>。未必生效</li>
+<li><del>自行解码，借助zlib等库</del>(未尝试成功)</li>
+<li>利用IE自身的解码功能，直接从IE浏览器中取结果</li>
+</ul></li>
+</ul>
+
+<h3 id="数据提取与存储">数据提取与存储</h3>
+
+<p>1.JSON：<a href="https://vba-tools.github.io/VBA-Web/docs/#/WebHelpers/ParseJson">VBA-JSON</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-vbscript" data-lang="vbscript"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-vbscript" data-lang="vbscript">&#39;&#39;&#39;
+&#39; 代码来自 https://github.com/VBA-tools/VBA-JSON
+&#39;&#39;&#39;
+Dim Json As Object
+Set Json = WebHelpers.ParseJson(&#34;{&#34;&#34;a&#34;&#34;:123,&#34;&#34;b&#34;&#34;:[1,2,3,4],&#34;&#34;c&#34;&#34;:{&#34;&#34;d&#34;&#34;:456}}&#34;)
+
+&#39; Json(&#34;a&#34;) -&gt; 123
+&#39; Json(&#34;b&#34;)(2) -&gt; 2
+&#39; Json(&#34;c&#34;)(&#34;d&#34;) -&gt; 456
+Json(&#34;c&#34;)(&#34;e&#34;) = 789
+
+&#39; 如果响应的文本是标准的json，可以使用WebClient的GetJson方法直接获得Json对象
+&#39; 参见 https://vba-tools.github.io/VBA-Web/docs/#/WebClient/GetJson</code></pre></td></tr></table>
+</div>
+</div>
+<p>2.HTML：<a href="https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/platform-apis/hh801967(v%3dvs.85)">HTMLDocument对象</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-vbscript" data-lang="vbscript"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-vbscript" data-lang="vbscript">&#39;&#39;&#39;
+&#39; require &#39;Microsoft HTML Object Library&#39;
+&#39;&#39;&#39;
+Dim oHTML As New HTMLDocument
+
+Set oHTML = CreateObject(&#34;htmlfile&#34;)
+oHTML.Body.innerHTML = contentfromresponse &#39; 将假设的响应内容赋值给Body节点的innerHTML
+oHTML.getElementsByClassName(&#34;sellPoint&#34;) &#39; 获取HTMLDocument对象中class名为&#34;sellPoint&#34;的元素集合。该方法仅在excel2013及以上版本的库中有
+&#39; 更多方法见文档，搜&#34;getElement&#34;
+&#39; 一个更详细的教程: https://www.automateexcel.com/vba/automate-internet-explorer-ie-using/
+&#39; TODO: POST方法 https://www.motobit.com/tips/detpg_sendfrmie/</code></pre></td></tr></table>
+</div>
+</div>
+<p>3.纯文本：<a href="https://docs.microsoft.com/en-us/dotnet/standard/base-types/the-regular-expression-object-model">正则表达式</a> : <a href="https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-language-quick-reference">doc</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-vbscript" data-lang="vbscript"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-vbscript" data-lang="vbscript">&#39;&#39;&#39;
+&#39; require &#39;Microsoft VBScript Regular Expressions 5.5&#39;
+&#39;&#39;&#39;
+Dim oRegExp As New RegExp
+Dim oMaches As New MatchCollection
+Dim oMatch As New Match
+
+With oRegExp
+    .Global = True
+    .IgnoreCase = True
+    .Pattern = &#34;&#34;&#34;gbPrice&#34;&#34;:&#34;&#34;(\d+.\d+)&#34;&#34;&#34;
+    Set oMatches = .Execute(sometext) &#39; 假设存在字符串变量sometext
+End With
+If oMatches.Count = 1 Then
+    Debug.Print oMatches.Item(0).SubMatches(0)
+End If
+
+   &#39; 一个更详细的教程： https://blog.udemy.com/vba-regex/</code></pre></td></tr></table>
+</div>
+</div>
+<p>4.数据结构: <a href="https://docs.microsoft.com/zh-cn/office/vba/language/reference/user-interface-help/dictionary-object">Dictionary对象</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-vbscript" data-lang="vbscript"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-vbscript" data-lang="vbscript">&#39;&#39;&#39;
+&#39; require &#39;Microsoft Scripting Runtime&#39;
+&#39;&#39;&#39;
+Dim oDict As New Scripting.Dictionary
+
+oDict.Add &#34;a&#34;, &#34;hello&#34;
+oDict.Add &#34;b&#34;, &#34;world&#34;
+
+oDict.Item(&#34;a&#34;) &#39; -&gt; hello</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="琐碎">琐碎</h2>
+
+<h3 id="vba相关">VBA相关</h3>
+
+<ul>
+<li><p>自定义函数返回值如果是对象也要用<code>Set</code>关键字，如<code>Set myFunc = resultObj</code></p></li>
+
+<li><p>用0补齐18位：<code>Format(&quot;1234&quot;,&quot;000000000000000000&quot;)</code></p></li>
+
+<li><p>获取已使用行数：<code>WorksheetFunction.CountA(Range(&quot;A:A&quot;))</code></p></li>
+
+<li><p>释放内存：<code>Set someObj = Nothing</code></p></li>
+
+<li><p>读写本地文件:</p></li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-vbscript" data-lang="vbscript"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-vbscript" data-lang="vbscript">  Dim mytext As String
+  Open &#34;C:\...\somefile.txt&#34; For Input As #1
+  Do While Not EOF(1)
+     Line Input #1, mytext
+  Loop
+  Close #1
+  Debug.Print mytext</code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="网抓相关">网抓相关</h3>
+
+<p>TODO</p>
+
+<h2 id="案例">案例</h2>
+
+<p>TODO</p>
+
+<h2 id="延展资料">延展资料</h2>
+
+<ul>
+<li><a href="http://club.excelhome.net/thread-1303169-1-1.html">网页数据采集-网页文档解析篇</a></li>
+<li><a href="http://blog.sina.com.cn/s/blog_8c2a8f390102w89p.html">网页自动化-VBA和InternetExplorer.Application</a></li>
+<li><a href="https://analystcave.com/web-scraping-tutorial/">Web Scraping Tutorial</a></li>
+</ul>
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">woohoodai</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2018-12-24</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content">true</span>
+  </p>
+</div>
+
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/post/%E8%BD%AC%E8%BD%BD%E4%BF%AE%E6%94%B9mysql%E7%BB%83%E4%B9%A0%E9%A2%98/">
+            <span class="next-text nav-default">[转改]MySQL练习题</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            
+            <i class="iconfont">
+              <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M332.091514 74.487481l-75.369571 89.491197c-10.963703 12.998035-10.285251 32.864502 1.499144 44.378743l286.278095 300.375162L266.565125 819.058374c-11.338233 12.190647-11.035334 32.285311 0.638543 44.850487l80.46666 86.564541c11.680017 12.583596 30.356378 12.893658 41.662889 0.716314l377.434212-421.426145c11.332093-12.183484 11.041474-32.266891-0.657986-44.844348l-80.46666-86.564541c-1.772366-1.910513-3.706415-3.533476-5.750981-4.877077L373.270379 71.774697C361.493148 60.273758 343.054193 61.470003 332.091514 74.487481z"></path>
+</svg>
+
+            </i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+    
+
+
+
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+  
+  
+    <a href="mailto:woohoodai@gmail.com" rel="me noopener" class="iconfont"
+      title="email" >
+      <svg class="icon" viewBox="0 0 1451 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M664.781909 681.472759 0 97.881301C0 3.997201 71.046997 0 71.046997 0L474.477909 0 961.649408 0 1361.641813 0C1361.641813 0 1432.688811 3.997201 1432.688811 97.881301L771.345323 681.472759C771.345323 681.472759 764.482731 685.154773 753.594283 688.65053L753.594283 688.664858C741.602731 693.493018 729.424896 695.068979 718.077952 694.839748 706.731093 695.068979 694.553173 693.493018 682.561621 688.664858L682.561621 688.65053C671.644501 685.140446 664.781909 681.472759 664.781909 681.472759L664.781909 681.472759ZM718.063616 811.603883C693.779541 811.016482 658.879232 802.205449 619.10784 767.734955 542.989056 701.759633 0 212.052267 0 212.052267L0 942.809523C0 942.809523 0 1024 83.726336 1024L682.532949 1024 753.579947 1024 1348.948139 1024C1432.688811 1024 1432.688811 942.809523 1432.688811 942.809523L1432.688811 212.052267C1432.688811 212.052267 893.138176 701.759633 817.019477 767.734955 777.248 802.205449 742.347691 811.03081 718.063616 811.603883L718.063616 811.603883Z"></path>
+</svg>
+
+    </a>
+
+
+<a href="https://woohoodai.github.io/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
+    class="iconfont" title="rss" target="_blank">
+    <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="30" height="30">
+  <path d="M819.157333 1024C819.157333 574.592 449.408 204.8 0 204.8V0c561.706667 0 1024 462.293333 1024 1024h-204.842667zM140.416 743.04a140.8 140.8 0 0 1 140.501333 140.586667A140.928 140.928 0 0 1 140.074667 1024C62.72 1024 0 961.109333 0 883.626667s62.933333-140.544 140.416-140.586667zM678.784 1024h-199.04c0-263.210667-216.533333-479.786667-479.744-479.786667V345.173333c372.352 0 678.784 306.517333 678.784 678.826667z"></path>
+</svg>
+
+  </a>
+  
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+      2016 -
+    2018
+    <span class="heart">
+      
+      <i class="iconfont">
+        <svg class="icon" viewBox="0 0 1025 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="14" height="14">
+  <path d="M1000.1 247.9c-15.5-37.3-37.6-70.6-65.7-98.9-54.4-54.8-125.8-85-201-85-85.7 0-166 39-221.4 107.4C456.6 103 376.3 64 290.6 64c-75.1 0-146.5 30.4-201.1 85.6-28.2 28.5-50.4 61.9-65.8 99.3-16 38.8-24 79.9-23.6 122.2 0.7 91.7 40.1 177.2 108.1 234.8 3.1 2.6 6 5.1 8.9 7.8 14.9 13.4 58 52.8 112.6 102.7 93.5 85.5 209.9 191.9 257.5 234.2 7 6.1 15.8 9.5 24.9 9.5 9.2 0 18.1-3.4 24.9-9.5 34.5-30.7 105.8-95.9 181.4-165 74.2-67.8 150.9-138 195.8-178.2 69.5-57.9 109.6-144.4 109.9-237.3 0.1-42.5-8-83.6-24-122.2z"
+   fill="#8a8a8a"></path>
+</svg>
+
+      </i>
+    </span><span class="author">
+        woohoodai
+        
+      </span></span>
+
+  
+  
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont">
+        
+        <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="35" height="35">
+  <path d="M510.866688 227.694839 95.449397 629.218702l235.761562 0-2.057869 328.796468 362.40389 0L691.55698 628.188232l241.942331-3.089361L510.866688 227.694839zM63.840492 63.962777l894.052392 0 0 131.813095L63.840492 195.775872 63.840492 63.962777 63.840492 63.962777zM63.840492 63.962777"></path>
+</svg>
+
+      </i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+
+
+
+
+<script type="text/javascript" src="/js/main.638251f4230630f0335d8c6748e53a96f94b72670920b60c09a56fdc8bece214.js" integrity="sha256-Y4JR9CMGMPAzXYxnSOU6lvlLcmcJILYMCaVv3Ivs4hQ="></script>
+
+
+
+
+
+
+  
+    <script type="text/javascript" src="/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

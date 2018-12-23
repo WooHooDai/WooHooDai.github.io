@@ -5,10 +5,19 @@
     <link>https://woohoodai.github.io/tags/</link>
     <description>Recent content in Tags on woohoodai</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 23 Aug 2016 01:58:25 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 24 Dec 2018 00:13:11 +0800</lastBuildDate>
     
 	<atom:link href="https://woohoodai.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title></title>
+      <link>https://woohoodai.github.io/tags/</link>
+      <pubDate>Mon, 24 Dec 2018 00:13:11 +0800</pubDate>
+      
+      <guid>https://woohoodai.github.io/tags/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Debian</title>
