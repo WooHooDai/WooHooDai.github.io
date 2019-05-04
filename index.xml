@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>woohoodai</title>
@@ -1548,15 +1549,17 @@ Used time: &lt;span class=&#34;m&#34;&gt;11&lt;/span&gt;.9035749435&lt;/code&gt;
       
       <guid>https://woohoodai.github.io/post/%E4%B8%80%E9%81%93%E7%BC%96%E7%A8%8B%E9%A2%98/</guid>
       
-        <description>&lt;h1 id=&#34;题目&#34;&gt;题目&lt;/h1&gt;
+        <description>&lt;p&gt;一组连续的正整数1~n,问其中只由0和1组成的数字的个数
+&lt;/p&gt;
+
+&lt;h1 id=&#34;题目&#34;&gt;题目&lt;/h1&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;一组连续的正整数1~n,问其中只由0和1组成的数字的个数&lt;br /&gt;
 输入: n, 1 &amp;lt; n &amp;lt;= 10e9&lt;br /&gt;
 示例&lt;br /&gt;
 &amp;gt; 输入: 10&lt;br /&gt;
-&amp;gt; 输出: 2
-&lt;/p&gt;
+&amp;gt; 输出: 2&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;h1 id=&#34;直觉解法&#34;&gt;直觉解法&lt;/h1&gt;

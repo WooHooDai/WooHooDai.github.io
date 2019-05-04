@@ -53,7 +53,7 @@
   
   <url>
     <loc>https://woohoodai.github.io/post/%E4%B8%80%E9%81%93%E7%BC%96%E7%A8%8B%E9%A2%98/</loc>
-    <lastmod>2018-12-24T01:36:39+08:00</lastmod>
+    <lastmod>2018-12-24T01:52:04+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -94,14 +94,14 @@
   </url>
   
   <url>
-    <loc>https://woohoodai.github.io/categories/</loc>
+    <loc>https://woohoodai.github.io/tags/</loc>
     <lastmod>2018-12-24T00:13:11+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://woohoodai.github.io/tags/</loc>
+    <loc>https://woohoodai.github.io/categories/</loc>
     <lastmod>2018-12-24T00:13:11+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
@@ -157,15 +157,15 @@
   </url>
   
   <url>
-    <loc>https://woohoodai.github.io/categories/python/</loc>
-    <lastmod>2018-12-09T20:31:05+08:00</lastmod>
+    <loc>https://woohoodai.github.io/tags/python/</loc>
+    <lastmod>2018-09-16T13:44:26+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://woohoodai.github.io/tags/python/</loc>
-    <lastmod>2018-09-16T13:44:26+08:00</lastmod>
+    <loc>https://woohoodai.github.io/categories/python/</loc>
+    <lastmod>2018-12-09T20:31:05+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -221,14 +221,14 @@
   
   <url>
     <loc>https://woohoodai.github.io/tags/%E9%9D%A2%E8%AF%95/</loc>
-    <lastmod>2018-12-24T01:36:39+08:00</lastmod>
+    <lastmod>2018-12-24T01:52:04+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://woohoodai.github.io/tags/%E9%A2%98%E7%9B%AE/</loc>
-    <lastmod>2018-12-24T01:36:39+08:00</lastmod>
+    <lastmod>2018-12-24T01:52:04+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
