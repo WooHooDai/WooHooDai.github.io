@@ -23,7 +23,8 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="woohoodai" />
-  <meta name="description" content=" 译自：The Python Language Reference (3.5.1) - 3.3.3 Customizing class creation " />
+  <meta name="description" content=" 译自：The Python Language Reference (3.5.1) - 3.3.3 Customizing class creation
+" />
 
   <meta name="keywords" content="woohoodai, blog" />
 
@@ -32,7 +33,7 @@
 
 
 
-<meta name="generator" content="Hugo" />
+<meta name="generator" content="Hugo 0.55.5" />
 
 
 <link rel="canonical" href="https://woohoodai.github.io/post/customizing-class-creation/" />
@@ -51,7 +52,7 @@
 
 
 
-<link rel="stylesheet" href="/sass/jane.min.b1679e57eeea2063968c2297b106a28a5f8588a822aaea6ec3e802853d3ee8cb.css" integrity="sha256-sWeeV&#43;7qIGOWjCKXsQaiil&#43;FiKgiqupuw&#43;gChT0&#43;6Ms=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.ec807d8b802a40889537c26e014f733206312ea440d42e1f0dabed80918de1ac.css" integrity="sha256-7IB9i4AqQIiVN8JuAU9zMgYxLqRA1C4fDavtgJGN4aw=" media="screen" crossorigin="anonymous">
 
 
 
@@ -62,8 +63,10 @@
 译自：The Python Language Reference (3.5.1) - 3.3.3 Customizing class creation
 " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://woohoodai.github.io/post/customizing-class-creation/" /><meta property="article:published_time" content="2016-04-24T17:55:58&#43;00:00"/>
+<meta property="og:url" content="https://woohoodai.github.io/post/customizing-class-creation/" />
+<meta property="article:published_time" content="2016-04-24T17:55:58&#43;00:00"/>
 <meta property="article:modified_time" content="2018-12-09T20:31:05&#43;08:00"/>
+
 <meta itemprop="name" content="定制类的创建(Metaclass)">
 <meta itemprop="description" content="
 译自：The Python Language Reference (3.5.1) - 3.3.3 Customizing class creation
@@ -71,7 +74,7 @@
 
 
 <meta itemprop="datePublished" content="2016-04-24T17:55:58&#43;00:00" />
-<meta itemprop="dateModified" content="2016-04-24T17:55:58&#43;00:00" />
+<meta itemprop="dateModified" content="2018-12-09T20:31:05&#43;08:00" />
 <meta itemprop="wordCount" content="1354">
 
 
@@ -340,8 +343,7 @@
     
     <div class="post-content">
       <blockquote>
-<p>译自：<a href="https://docs.python.org/3/reference/datamodel.html#customizing-class-creation">The Python Language Reference (3.5.1) - 3.3.3 Customizing class creation</a>
-</p>
+<p>译自：<a href="https://docs.python.org/3/reference/datamodel.html#customizing-class-creation">The Python Language Reference (3.5.1) - 3.3.3 Customizing class creation</a></p>
 </blockquote>
 
 <p>默认情况下，类是通过 <code>type()</code> 构造的。类的主体在新的命名空间中被执行，类名被局部绑定到 <code>type(name,bases,namespace)</code> 的结果中。</p>

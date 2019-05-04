@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Jessie on woohoodai</title>
+    <title>jessie on woohoodai</title>
     <link>https://woohoodai.github.io/tags/jessie/</link>
-    <description>Recent content in Jessie on woohoodai</description>
+    <description>Recent content in jessie on woohoodai</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Tue, 23 Aug 2016 01:58:25 +0000</lastBuildDate>
     
@@ -17,8 +17,8 @@
       
       <guid>https://woohoodai.github.io/post/debian%E6%B5%81%E6%B0%B4%E5%B8%90/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;尝试切换到Debian Jessie系统下.做些记录,避免无用的折腾.
-&lt;/p&gt;</description>
+&lt;p&gt;尝试切换到Debian Jessie系统下.做些记录,避免无用的折腾.&lt;/p&gt;
+&lt;/blockquote&gt;</description>
     </item>
     
   </channel>
