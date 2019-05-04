@@ -447,7 +447,7 @@ With oRequest
 	.Format = WebFormat.PlainText
 	.AddUrlSegment &#34;keyword&#34;, &#34;你好世界&#34;
 	&#39; -&gt; Url: https://www.baidu.com/s?wd=你好世界
-    .AddQuerystringParam &#34;ss&#34;,7
+  .AddQuerystringParam &#34;ss&#34;,7
     &#39; -&gt; Url: Url: https://www.baidu.com/s?wd=你好世界&amp;ss=7
 End With
 
@@ -655,13 +655,13 @@ Dim oMaches As New MatchCollection
 Dim oMatch As New Match
 
 With oRegExp
-    .Global = True
-    .IgnoreCase = True
-    .Pattern = &#34;&#34;&#34;gbPrice&#34;&#34;:&#34;&#34;(\d+.\d+)&#34;&#34;&#34;
-    Set oMatches = .Execute(sometext) &#39; 假设存在字符串变量sometext
+  .Global = True
+  .IgnoreCase = True
+  .Pattern = &#34;&#34;&#34;gbPrice&#34;&#34;:&#34;&#34;(\d+.\d+)&#34;&#34;&#34;
+  Set oMatches = .Execute(sometext) &#39; 假设存在字符串变量sometext
 End With
 If oMatches.Count = 1 Then
-    Debug.Print oMatches.Item(0).SubMatches(0)
+  Debug.Print oMatches.Item(0).SubMatches(0)
 End If
 
    &#39; 一个更详细的教程： https://blog.udemy.com/vba-regex/</code></pre></td></tr></table>
@@ -718,13 +718,13 @@ oDict.Item(&#34;a&#34;) &#39; -&gt; hello</code></pre></td></tr></table>
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-vbscript" data-lang="vbscript">  Dim mytext As String
-  Open &#34;C:\...\somefile.txt&#34; For Input As #1
-  Do While Not EOF(1)
-     Line Input #1, mytext
-  Loop
-  Close #1
-  Debug.Print mytext</code></pre></td></tr></table>
+<pre class="chroma"><code class="language-vbscript" data-lang="vbscript">Dim mytext As String
+Open &#34;C:\...\somefile.txt&#34; For Input As #1
+Do While Not EOF(1)
+	Line Input #1, mytext
+Loop
+Close #1
+Debug.Print mytext</code></pre></td></tr></table>
 </div>
 </div>
 <h3 id="网抓相关">网抓相关</h3>

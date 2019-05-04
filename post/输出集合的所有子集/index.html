@@ -23,7 +23,8 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="woohoodai" />
-  <meta name="description" content="思路 在看LCS的时候,想不明白为什么拥有n个元素的集合,其所有子集个数是2^n. 查了一些资料觉得这个思路最好理解: 1. 子集从原集合中选取元素,对于每个元素它都有两种选择,选取或者不选取 2. 那么子集的个数即为元素组合的可能性,即2^n " />
+  <meta name="description" content="
+" />
 
   <meta name="keywords" content="woohoodai, blog" />
 
@@ -58,42 +59,24 @@
 
 
 <meta property="og:title" content="输出集合的所有子集" />
-<meta property="og:description" content="思路
-
-在看LCS的时候,想不明白为什么拥有n个元素的集合,其所有子集个数是2^n.
-查了一些资料觉得这个思路最好理解:
-1. 子集从原集合中选取元素,对于每个元素它都有两种选择,选取或者不选取
-2. 那么子集的个数即为元素组合的可能性,即2^n
-" />
+<meta property="og:description" content="" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://woohoodai.github.io/post/%E8%BE%93%E5%87%BA%E9%9B%86%E5%90%88%E7%9A%84%E6%89%80%E6%9C%89%E5%AD%90%E9%9B%86/" /><meta property="article:published_time" content="2016-10-31T18:46:45&#43;00:00"/>
-<meta property="article:modified_time" content="2018-12-09T20:20:11&#43;08:00"/>
+<meta property="article:modified_time" content="2018-12-24T01:48:15&#43;08:00"/>
 <meta itemprop="name" content="输出集合的所有子集">
-<meta itemprop="description" content="思路
-
-在看LCS的时候,想不明白为什么拥有n个元素的集合,其所有子集个数是2^n.
-查了一些资料觉得这个思路最好理解:
-1. 子集从原集合中选取元素,对于每个元素它都有两种选择,选取或者不选取
-2. 那么子集的个数即为元素组合的可能性,即2^n
-">
+<meta itemprop="description" content="">
 
 
 <meta itemprop="datePublished" content="2016-10-31T18:46:45&#43;00:00" />
 <meta itemprop="dateModified" content="2016-10-31T18:46:45&#43;00:00" />
-<meta itemprop="wordCount" content="255">
+<meta itemprop="wordCount" content="251">
 
 
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="输出集合的所有子集"/>
-<meta name="twitter:description" content="思路
-
-在看LCS的时候,想不明白为什么拥有n个元素的集合,其所有子集个数是2^n.
-查了一些资料觉得这个思路最好理解:
-1. 子集从原集合中选取元素,对于每个元素它都有两种选择,选取或者不选取
-2. 那么子集的个数即为元素组合的可能性,即2^n
-"/>
+<meta name="twitter:description" content=""/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -312,7 +295,7 @@
           2016-10-31
         </time>
         
-        <span class="more-meta"> 约 255 字 </span>
+        <span class="more-meta"> 约 251 字 </span>
           <span class="more-meta"> 预计阅读 1 分钟 </span>
 
         
@@ -342,19 +325,27 @@
 
     
     <div class="post-content">
-      <h2 id="思路">思路</h2>
+      <p></p>
+
+<h2 id="思路">思路</h2>
 
 <p>在看LCS的时候,想不明白为什么拥有n个元素的集合,其所有子集个数是2^n.
-查了一些资料觉得这个思路最好理解:
-1. 子集从原集合中选取元素,对于每个元素它都有两种选择,选取或者不选取
-2. 那么子集的个数即为元素组合的可能性,即2^n
-</p>
+查了一些资料觉得这个思路最好理解:</p>
+
+<ol>
+<li>子集从原集合中选取元素,对于每个元素它都有两种选择,选取或者不选取</li>
+<li>那么子集的个数即为元素组合的可能性,即2^n
+<!--more--></li>
+</ol>
 
 <p>那么怎么遍历输出这些子集呢?
 基本思路为:逐个判断原集合中的元素,是否被当前要输出的子集选取
-具体思路为:
-1. 用0~2^n代表各子集
-2. 对各子集逐位判断,若为1则将原集合中对应元素加入到当前子集</p>
+具体思路为:</p>
+
+<ol>
+<li>用0~2^n代表各子集</li>
+<li>对各子集逐位判断,若为1则将原集合中对应元素加入到当前子集</li>
+</ol>
 
 <h2 id="代码">代码</h2>
 <div class="highlight"><div class="chroma">
@@ -396,7 +387,7 @@
   </p>
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
-    <span class="item-content">2018-12-09</span>
+    <span class="item-content">2018-12-24</span>
   </p>
   
   <p class="copyright-item">

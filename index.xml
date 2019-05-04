@@ -130,7 +130,7 @@ With oRequest
 	.Format = WebFormat.PlainText
 	.AddUrlSegment &amp;#34;keyword&amp;#34;, &amp;#34;你好世界&amp;#34;
 	&amp;#39; -&amp;gt; Url: https://www.baidu.com/s?wd=你好世界
-    .AddQuerystringParam &amp;#34;ss&amp;#34;,7
+  .AddQuerystringParam &amp;#34;ss&amp;#34;,7
     &amp;#39; -&amp;gt; Url: Url: https://www.baidu.com/s?wd=你好世界&amp;amp;ss=7
 End With
 
@@ -338,13 +338,13 @@ Dim oMaches As New MatchCollection
 Dim oMatch As New Match
 
 With oRegExp
-    .Global = True
-    .IgnoreCase = True
-    .Pattern = &amp;#34;&amp;#34;&amp;#34;gbPrice&amp;#34;&amp;#34;:&amp;#34;&amp;#34;(\d+.\d+)&amp;#34;&amp;#34;&amp;#34;
-    Set oMatches = .Execute(sometext) &amp;#39; 假设存在字符串变量sometext
+  .Global = True
+  .IgnoreCase = True
+  .Pattern = &amp;#34;&amp;#34;&amp;#34;gbPrice&amp;#34;&amp;#34;:&amp;#34;&amp;#34;(\d+.\d+)&amp;#34;&amp;#34;&amp;#34;
+  Set oMatches = .Execute(sometext) &amp;#39; 假设存在字符串变量sometext
 End With
 If oMatches.Count = 1 Then
-    Debug.Print oMatches.Item(0).SubMatches(0)
+  Debug.Print oMatches.Item(0).SubMatches(0)
 End If
 
    &amp;#39; 一个更详细的教程： https://blog.udemy.com/vba-regex/&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
@@ -401,13 +401,13 @@ oDict.Item(&amp;#34;a&amp;#34;) &amp;#39; -&amp;gt; hello&lt;/code&gt;&lt;/pre&g
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-vbscript&#34; data-lang=&#34;vbscript&#34;&gt;  Dim mytext As String
-  Open &amp;#34;C:\...\somefile.txt&amp;#34; For Input As #1
-  Do While Not EOF(1)
-     Line Input #1, mytext
-  Loop
-  Close #1
-  Debug.Print mytext&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-vbscript&#34; data-lang=&#34;vbscript&#34;&gt;Dim mytext As String
+Open &amp;#34;C:\...\somefile.txt&amp;#34; For Input As #1
+Do While Not EOF(1)
+	Line Input #1, mytext
+Loop
+Close #1
+Debug.Print mytext&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;h3 id=&#34;网抓相关&#34;&gt;网抓相关&lt;/h3&gt;
@@ -1269,19 +1269,27 @@ oDict.Item(&amp;#34;a&amp;#34;) &amp;#39; -&amp;gt; hello&lt;/code&gt;&lt;/pre&g
       
       <guid>https://woohoodai.github.io/post/%E8%BE%93%E5%87%BA%E9%9B%86%E5%90%88%E7%9A%84%E6%89%80%E6%9C%89%E5%AD%90%E9%9B%86/</guid>
       
-        <description>&lt;h2 id=&#34;思路&#34;&gt;思路&lt;/h2&gt;
+        <description>&lt;p&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;思路&#34;&gt;思路&lt;/h2&gt;
 
 &lt;p&gt;在看LCS的时候,想不明白为什么拥有n个元素的集合,其所有子集个数是2^n.
-查了一些资料觉得这个思路最好理解:
-1. 子集从原集合中选取元素,对于每个元素它都有两种选择,选取或者不选取
-2. 那么子集的个数即为元素组合的可能性,即2^n
-&lt;/p&gt;
+查了一些资料觉得这个思路最好理解:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;子集从原集合中选取元素,对于每个元素它都有两种选择,选取或者不选取&lt;/li&gt;
+&lt;li&gt;那么子集的个数即为元素组合的可能性,即2^n
+&lt;!--more--&gt;&lt;/li&gt;
+&lt;/ol&gt;
 
 &lt;p&gt;那么怎么遍历输出这些子集呢?
 基本思路为:逐个判断原集合中的元素,是否被当前要输出的子集选取
-具体思路为:
-1. 用0~2^n代表各子集
-2. 对各子集逐位判断,若为1则将原集合中对应元素加入到当前子集&lt;/p&gt;
+具体思路为:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;用0~2^n代表各子集&lt;/li&gt;
+&lt;li&gt;对各子集逐位判断,若为1则将原集合中对应元素加入到当前子集&lt;/li&gt;
+&lt;/ol&gt;
 
 &lt;h2 id=&#34;代码&#34;&gt;代码&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -1641,29 +1649,41 @@ Used time: &lt;span class=&#34;m&#34;&gt;11&lt;/span&gt;.9035749435&lt;/code&gt;
 
 &lt;h2 id=&#34;规律&#34;&gt;规律&lt;/h2&gt;
 
-&lt;p&gt;设对于给定的数n,其有k位.将问题分解成两部分:
-    - 求前&lt;code&gt;10^(k-1)-1&lt;/code&gt;个数中符合题意的数字个数
-    - 求&lt;code&gt;10^(k-1)~n&lt;/code&gt;中符合题意的数字个数
-    - 两个问题的解之和为答案&lt;/p&gt;
+&lt;p&gt;设对于给定的数n,其有k位.将问题分解成两部分:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;求前&lt;code&gt;10^(k-1)-1&lt;/code&gt;个数中符合题意的数字个数&lt;/li&gt;
+&lt;li&gt;求&lt;code&gt;10^(k-1)~n&lt;/code&gt;中符合题意的数字个数&lt;/li&gt;
+&lt;li&gt;两个问题的解之和为答案&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h3 id=&#34;求前-10-k-1-1-个数中符合题意的数字个数&#34;&gt;求前&lt;code&gt;10^(k-1)-1&lt;/code&gt;个数中符合题意的数字个数&lt;/h3&gt;
 
 &lt;p&gt;既然是只包含0和1的数字,那长得就和二进制数完全一样了,那么从二进制数的角度思考一下:
 首先问题转换为给定一个位数k,求位数小于等于k的二进制数的个数&lt;/p&gt;
 
-&lt;p&gt;观察上方的表格,将包含的数字视为二进制数:
-- n=1时,只包含一个数字1符合条件;
-- n=2时:
-    - 符合条件的数字是:1, 10, 11
-    - 1是n=1时符合条件的数字
-    - 10是1左移1位得到的数字
-    - 11是10+1的到的数字
-    - 11不能再做处理(否则位数就不符合题意)
-- n=3时:
-    - 符合条件的数字是:1, 10, 11, 100, 101, 110, 111
-    - 1,10,11是n=2时符合条件的数字
-    - 100是10左移1位得到的数字, 101是100+1得到的数字
-    - 110是11左移1位得到的数字, 111是110+1得到的数字&lt;/p&gt;
+&lt;p&gt;观察上方的表格,将包含的数字视为二进制数:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;n=1时,只包含一个数字1符合条件;&lt;/li&gt;
+&lt;li&gt;n=2时:
+
+&lt;ul&gt;
+&lt;li&gt;符合条件的数字是:1, 10, 11&lt;/li&gt;
+&lt;li&gt;1是n=1时符合条件的数字&lt;/li&gt;
+&lt;li&gt;10是1左移1位得到的数字&lt;/li&gt;
+&lt;li&gt;11是10+1的到的数字&lt;/li&gt;
+&lt;li&gt;11不能再做处理(否则位数就不符合题意)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;n=3时:
+
+&lt;ul&gt;
+&lt;li&gt;符合条件的数字是:1, 10, 11, 100, 101, 110, 111&lt;/li&gt;
+&lt;li&gt;1,10,11是n=2时符合条件的数字&lt;/li&gt;
+&lt;li&gt;100是10左移1位得到的数字, 101是100+1得到的数字&lt;/li&gt;
+&lt;li&gt;110是11左移1位得到的数字, 111是110+1得到的数字&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;发现规律了吗?
 f(n) = f(n-1) + (f(n-1)-f(n-2)) * 2&lt;/p&gt;
@@ -1732,9 +1752,9 @@ f(n) = f(n-1) + (f(n-1)-f(n-2)) * 2&lt;/p&gt;
         <description>&lt;blockquote&gt;
 &lt;p&gt;尝试切换到Debian Jessie系统下.做些记录,避免无用的折腾.
 &lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;h1 id=&#34;系统安装&#34;&gt;系统安装&lt;/h1&gt;
-&lt;/blockquote&gt;
 
 &lt;ol&gt;
 &lt;li&gt;&lt;p&gt;缺失固件&lt;/p&gt;
@@ -1840,15 +1860,18 @@ f(n) = f(n-1) + (f(n-1)-f(n-2)) * 2&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;xinput同样也能管理触摸板.此方法只当前登录有效,需加入开机自启动,相关方法和讨论见本文&amp;rsquo;系统使用-自启动&amp;rsquo;部分&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;xinput同样也能管理触摸板.此方法只当前登录有效，需加入开机自启动，相关方法和讨论见本文系统使用-自启动部分&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
 
-&lt;p&gt;-键盘背光
-    - 参考 &lt;a href=&#34;https://wiki.archlinux.org/index.php/Keyboard_backlight&#34;&gt;Keyboard backlight&lt;/a&gt;
-    - 上面链接中的脚本是通用的,照着写个直接将亮度调到0的方法
-    - 需要开机启动,参考本文&amp;rsquo;系统使用-自启动&amp;rsquo;
-    - 全部设置-电源 里也可以手动调整亮度&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;键盘背光&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;参考 &lt;a href=&#34;https://wiki.archlinux.org/index.php/Keyboard_backlight&#34;&gt;Keyboard backlight&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;上面链接中的脚本是通用的,照着写个直接将亮度调到0的方法&lt;/li&gt;
+&lt;li&gt;需要开机启动,参考本文&amp;rsquo;系统使用-自启动&amp;rsquo;&lt;/li&gt;
+&lt;li&gt;全部设置-电源 里也可以手动调整亮度&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;蓝牙&lt;/p&gt;
 
